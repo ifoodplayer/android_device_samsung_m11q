@@ -33,15 +33,28 @@ TARGET_BOOTLOADER_BOARD_NAME := m11q
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_SECOND_OFFSET := 0x00f00000
+BOARD_TAGS_OFFSET := 0x01e00000
+BOARD_HEADER_VERSION := 2
+BOARD_RECOVERY_DTBO_SIZE := 2347796
+BOARD_RECOVERY_DTBO_OFFSET := 21106688
+BOARD_HEADER_SIZE := 1660
+BOARD_DTB_SIZE := 859398
+BOARD_DTB_OFFSET := 0x101f00000
 BOARD_PREBUILT_DTBIMAGE_DIR := $(LOCAL_PATH)/prebuilt
 TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/m11q-dtb
 BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/m11q-dtbo
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
-BOARD_KERNEL_BASE := 0x0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_BOOT_HEADER_VERSION := 2
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_CONFIG := m11q_defconfig
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #62
