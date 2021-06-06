@@ -33,6 +33,9 @@ TARGET_BOOTLOADER_BOARD_NAME := m11q
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
+BOARD_PREBUILT_DTBIMAGE_DIR := $(LOCAL_PATH)/prebuilt
+TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/m11q-dtb
+BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/m11q-dtbo
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
 BOARD_KERNEL_BASE := 0x0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
