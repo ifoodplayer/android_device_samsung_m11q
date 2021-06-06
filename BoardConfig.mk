@@ -52,6 +52,17 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.har
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOT_HEADER_VERSION := 2
 
+BOARD_MKBOOTIMG_ARGS += \
+	--base $(BOARD_KERNEL_BASE) \
+	--pagesize $(BOARD_KERNEL_PAGESIZE) \
+	--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+	--tags_offset $(BOARD_TAGS_OFFSET) \
+	--kernel_offset $(BOARD_KERNEL_OFFSET) \
+	--second_offset $(BOARD_SECOND_OFFSET) \
+	--dtb_offset $(BOARD_DTB_OFFSET) \
+	--header_version $(BOARD_HEADER_VERSION) \
+	--dtb $(TARGET_PREBUILT_DTB)
+
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 TARGET_KERNEL_CONFIG := m11q_defconfig
