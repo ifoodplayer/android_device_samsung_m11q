@@ -1,0 +1,56 @@
+# Copyright (C) 2019 Huaqin Co.ltd.
+#
+# This file is used for SEPLite version only
+#
+# HS70 added by tangqingyong for HS70-12 at 20191009 start
+
+on early-init
+    mkdir /mnt/vendor/efs 0664 system system
+
+on fs
+    wait /dev/block/bootdevice/by-name/sec_efs
+    mount ext4 /dev/block/bootdevice/by-name/sec_efs /efs noatime nosuid nodev barrier=1
+    restorecon_recursive /efs
+    wait /dev/block/bootdevice/by-name/efs
+    mount ext4 /dev/block/bootdevice/by-name/efs /mnt/vendor/efs noatime nosuid nodev barrier=1
+    restorecon_recursive /mnt/vendor/efs
+
+on post-fs
+    chown system system /mnt/vendor/efs
+    chown system system /mnt/vendor/efs/*
+    chmod 0771 /mnt/vendor/efs
+    chmod 0771 /mnt/vendor/efs/*
+    chown system system /efs
+    chown system system /efs/*
+    chmod 0771 /efs
+    chmod 0771 /efs/*
+    chown system system /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+# HS70 added by tangqingyong for HS70-12 at 20191009 end
+
+#HS70 for AT function by miaozhenxing at 2019/11/04 start
+#HS60 code for ZQL169XFAC-134 can not write wifi Address by miaozhenxing at 2020/01/14 start
+service hqreadsvc /vendor/bin/hqread atcmd
+    class main
+    user root
+    disabled
+    oneshot
+    group root system bluetooth wifi
+    seclabel u:r:hqread:s0
+#HS60 code for ZQL169XFAC-134 can not write wifi Address by miaozhenxing at 2020/01/14 end
+on property:sys.hqread.trigger=1
+    start hqreadsvc
+
+# HS60 code for SR-ZQL1695-01000000491 loopback test by chenweibing at 20190820 start
+service hqcpsnbinsvc /system/bin/hqcpsnbin
+    class main
+    user root
+    disabled
+    oneshot
+    group root system audio
+    seclabel u:r:hqcopy:s0
+
+on property:sys.at.cpsnbin=1
+    start hqcpsnbinsvc
+# HS60 code for SR-ZQL1695-01000000491 loopback test by chenweibing at 20190820 end
+#HS70 for AT function by miaozhenxing at 2019/11/04 end

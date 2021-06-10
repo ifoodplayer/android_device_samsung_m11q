@@ -22,6 +22,23 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+	init.hq.common.rc \
+	init.hq.shipping.rc \
+	init.m11q.rc \
+    init.msm.usb.configfs.rc \
+    init.qcom.rc \
+	init.qcom.factory.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+	init.samsung.bsp.rc \
+	init.samsung.rc \
+    init.target.rc \
+    ueventd.qcom.rc
+
+
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/m11q/m11q-vendor.mk)
 

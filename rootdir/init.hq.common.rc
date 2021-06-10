@@ -1,0 +1,23 @@
+# Copyright (C) 2019 Huaqin Co.ltd.
+#
+# This file is used for both factory and shipping version
+#
+# HS60 code for SR-ZQL1871-01-229 by lijingang at 2019/11/04 start
+on post-fs-data
+    chmod 0644 /mnt/vendor/persist/.wifiver.info
+    chown wifi root /mnt/vendor/persist/.wifiver.info
+    mkdir /data/vendor/conn 0771 wifi wifi
+    copy /mnt/vendor/persist/.wifiver.info /data/vendor/conn/.wifiver.info
+    chown wifi root /data/vendor/conn/.wifiver.info
+    chmod 0664 /data/vendor/conn/.wifiver.info
+# HS60 code for SR-ZQL1871-01-229 by lijingang at 2019/11/04 end
+# HS60 code for ZQL169XFAC-133 by lijingang at 2020/01/11 start
+    chmod 0775 /mnt/vendor/efs/wifi
+    chown wifi wifi /mnt/vendor/efs/wifi
+    chmod 0664 /mnt/vendor/efs/wifi/.mac.info
+    chown wifi wifi /mnt/vendor/efs/wifi/.mac.info
+    chmod 0775 /efs/wifi
+    chown wifi wifi /efs/wifi
+    chmod 0664 /efs/wifi/.mac.info
+    chown wifi wifi /efs/wifi/.mac.info
+# HS60 code for ZQL169XFAC-133 by lijingang at 2020/01/11 end
