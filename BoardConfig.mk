@@ -82,6 +82,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/persist:/persist \
     /mnt/vendor/efs:/efs
 
+BOARD_ROOT_EXTRA_FOLDERS := carrier config efs keydata keyrefuge metadata optics prism omr
+
 # Dynamic Partition
 BOARD_SUPER_PARTITION_SIZE := 1862660096
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
