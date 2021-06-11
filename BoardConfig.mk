@@ -187,12 +187,15 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # Properties
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 TARGET_VENDOR_PROP := $(LOCAL_PATH)/vendor.prop
 TARGET_ODM_PROP := $(LOCAL_PATH)/odm.prop
 
-# Vendor separation
+# Vendor/Product/Odm separation
 TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_ODM := odm
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
