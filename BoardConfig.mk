@@ -249,6 +249,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
+# SELinux
+include device/qcom/sepolicy-legacy-um/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := 0
