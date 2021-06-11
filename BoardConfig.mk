@@ -158,6 +158,9 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_TS_MAKEUP := true
 
+# CNE
+BOARD_USES_QCNE := true
+
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -178,6 +181,16 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
@@ -185,6 +198,18 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 # HIDL
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
+
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
+# Media
+TARGET_USES_MEDIA_EXTENSIONS := true
+
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -200,6 +225,16 @@ TARGET_COPY_OUT_ODM := odm
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 TARGET_OTA_ASSERT_DEVICE := m11q
+
+# Power
+TARGET_HAS_NO_WIFI_STATS := true
+TARGET_USES_INTERACTION_BOOST := true
+
+# Protobuf
+PROTOBUF_SUPPORTED := true
+
+# Qualcomm
+BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
