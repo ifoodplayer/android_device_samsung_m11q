@@ -188,6 +188,8 @@ DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
 
 # Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+TARGET_VENDOR_PROP := $(LOCAL_PATH)/vendor.prop
+TARGET_ODM_PROP := $(LOCAL_PATH)/odm.prop
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := vendor
