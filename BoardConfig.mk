@@ -15,6 +15,7 @@
 # inherit from the proprietary version
 -include vendor/samsung/m11q/BoardConfigVendor.mk
 LOCAL_PATH := device/samsung/m11q
+BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -69,6 +70,10 @@ BOARD_MKBOOTIMG_ARGS += \
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 TARGET_KERNEL_CONFIG := m11q_defconfig
+
+# Kernel Toolchain
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #62
