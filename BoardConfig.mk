@@ -62,6 +62,7 @@ BOARD_MKBOOTIMG_ARGS += \
 	--kernel_offset $(BOARD_KERNEL_OFFSET) \
 	--second_offset $(BOARD_SECOND_OFFSET) \
 	--dtb_offset $(BOARD_DTB_OFFSET) \
+	--board $(TARGET_BOARD_PLATFORM) \
 	--header_version $(BOARD_BOOT_HEADER_VERSION) \
 	--dtb $(TARGET_PREBUILT_DTB)
 
