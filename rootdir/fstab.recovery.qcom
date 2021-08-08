@@ -9,6 +9,9 @@ product                                                 /product               e
 vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
 odm                                                     /odm                   ext4    ro,errors=panic                                      wait,avb,logical,first_stage_mount
 
+/dev/block/bootdevice/by-name/boot             /boot               ext4        ro                                                          wait,recoveryonly
+/dev/block/bootdevice/by-name/recovery         /recovery           ext4        ro                                                          wait,recoveryonly
+
 /dev/block/platform/soc/7824900.sdhci/by-name/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,first_stage_mount,formattable,check
 /dev/block/platform/soc/7824900.sdhci/by-name/prism     /prism                 ext4    ro,barrier=1,discard                                 nofail,avb,first_stage_mount
 /dev/block/platform/soc/7824900.sdhci/by-name/optics    /optics                ext4    ro,barrier=1,discard                                 nofail,avb,first_stage_mount
