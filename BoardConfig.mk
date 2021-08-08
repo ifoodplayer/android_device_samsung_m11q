@@ -49,8 +49,8 @@ BOARD_HEADER_SIZE := 1660
 BOARD_DTB_SIZE := 859398
 BOARD_DTB_OFFSET := 0x101f00000
 BOARD_PREBUILT_DTBIMAGE_DIR := $(LOCAL_PATH)/prebuilt
-TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/m11q-dtb
-BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/m11q-dtbo
+TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/dtb
+BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
