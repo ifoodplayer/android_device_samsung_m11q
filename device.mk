@@ -27,6 +27,7 @@ BOARD_BUILD_PRODUCT_IMAGE := true
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    fstab.boot.qcom \
     fstab.qcom \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
