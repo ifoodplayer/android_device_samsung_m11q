@@ -38,7 +38,4 @@ service swapon /sbin/sswap -s -z -f 1536
     group root
     seclabel u:r:sswap:s0
     oneshot
-
-# tracking activation VNG
-on property:ro.csc.sales_code=XEV
-   tracking_activation_VNG
+    
