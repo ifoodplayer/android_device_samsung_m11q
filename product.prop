@@ -1,0 +1,9 @@
+# Miscellaneous
+restore.feature.use_samsung_smart_switch_flow=1
+ro.com.google.gmsversion=10_202005
+ro.opa.eligible_device=true
+ro.setupwizard.mode=OPTIONAL
+ro.setupwizard.rotation_locked=false
+ro.setupwizard.wifi_on_exit=false
+setupwizard.feature.enable_stencil_partner_customization=1
+
