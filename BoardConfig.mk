@@ -215,7 +215,8 @@ TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
 
-# Vendor/Product/Odm separation
+# System/Vendor/Product/Odm separation
+TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_ODM := odm
