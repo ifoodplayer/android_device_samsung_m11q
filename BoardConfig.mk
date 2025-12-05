@@ -178,6 +178,7 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 BOARD_USES_QCNE := true
 
 # Display
+TARGET_SCREEN_DENSITY := 280
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
@@ -268,6 +269,9 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Treble
 BOARD_VNDK_VERSION := current
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-03-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
