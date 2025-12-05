@@ -102,11 +102,6 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     tinymix
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl-qti \
-    libbt-vendor
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \

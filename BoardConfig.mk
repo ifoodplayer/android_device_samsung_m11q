@@ -14,7 +14,7 @@
 
 # inherit from the proprietary version
 -include vendor/samsung/m11q/BoardConfigVendor.mk
-LOCAL_PATH := device/samsung/m11q
+DEVICE_PATH := device/samsung/m11q
 BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
@@ -49,9 +49,9 @@ BOARD_HEADER_SIZE := 1660
 BOARD_DTB_SIZE := 859398
 BOARD_DTB_OFFSET := 0x101f00000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_PREBUILT_DTBIMAGE_DIR := $(LOCAL_PATH)/prebuilt
-TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/dtb
-BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
@@ -155,11 +155,7 @@ AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := false
 #AUDIO_FEATURE_ENABLED_VOICE_CONCURRENCY := true
 
 # Bluetooth
-BOARD_HAS_QCA_BT_ROME := true
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-QCOM_BT_USE_BTNV := true
-QCOM_BT_USE_SMD_TTY := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -205,11 +201,11 @@ BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
-DEVICE_MATRIX_FILE   := $(LOCAL_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
@@ -225,9 +221,9 @@ TARGET_PER_MGR_ENABLED := true
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
-TARGET_VENDOR_PROP := $(LOCAL_PATH)/vendor.prop
-TARGET_ODM_PROP := $(LOCAL_PATH)/odm.prop
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
+TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
 
 # Vendor/Product/Odm separation
 TARGET_COPY_OUT_VENDOR := vendor
@@ -253,14 +249,14 @@ BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_NO_RECOVERY := false
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.recovery.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.recovery.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
