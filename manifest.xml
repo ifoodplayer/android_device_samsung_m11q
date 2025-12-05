@@ -651,16 +651,6 @@
         <fqname>@2.0::ISehDrk/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.security.vaultkeeper</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehVaultKeeper</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehVaultKeeper/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.security.widevine.keyprovisioning</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
