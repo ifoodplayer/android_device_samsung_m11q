@@ -262,6 +262,9 @@ TARGET_USES_MKE2FS := true
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
+# RIL
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Treble
 BOARD_VNDK_VERSION := current
 
