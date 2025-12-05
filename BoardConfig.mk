@@ -16,6 +16,7 @@ DEVICE_PATH := device/samsung/m11q
 BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1560
