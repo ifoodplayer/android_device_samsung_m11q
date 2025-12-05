@@ -20,7 +20,7 @@ BUILD_TOP := $(shell pwd)
 BUILD_BROKEN_DUP_RULES := true
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1520
+TARGET_SCREEN_HEIGHT := 1560
 TARGET_SCREEN_WIDTH := 720
 
 # CPU
@@ -33,7 +33,6 @@ TARGET_CPU_VARIANT := cortex-a53
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOOTLOADER_BOARD_NAME := msm8953
-BOARD_USES_QCOM_HARDWARE := true
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -54,7 +53,7 @@ BOARD_DTB_SIZE := 859398
 BOARD_DTB_OFFSET := 0x101f00000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
@@ -74,8 +73,9 @@ BOARD_MKBOOTIMG_ARGS += \
 	--dtb $(TARGET_PREBUILT_DTB)
 
 # Kernel config
-TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CONFIG := m11q_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 
 # Kernel Toolchain
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
@@ -187,10 +187,9 @@ WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
@@ -229,6 +228,7 @@ TARGET_USES_INTERACTION_BOOST := true
 PROTOBUF_SUPPORTED := true
 
 # Qualcomm
+BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
