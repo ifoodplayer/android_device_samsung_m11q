@@ -19,6 +19,10 @@ BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1520
+TARGET_SCREEN_WIDTH := 720
+
 # CPU
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv8-a
