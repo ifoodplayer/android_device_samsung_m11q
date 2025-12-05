@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the proprietary version
--include vendor/samsung/m11q/BoardConfigVendor.mk
 DEVICE_PATH := device/samsung/m11q
 BUILD_TOP := $(shell pwd)
 
@@ -253,17 +251,29 @@ BOARD_VNDK_VERSION := current
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_ROLLBACK_INDEX := 0
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Wi-Fi
-BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_HAS_QCOM_WLAN := true
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-WIFI_DRIVER_FW_PATH_AP := "ap"
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_FW_PATH_AP  := "ap"
+WIFI_DRIVER_FW_PATH_P2P := "p2p"
+WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH := "/vendor/lib/modules/pronto_wlan.ko"
+WIFI_DRIVER_MODULE_NAME := "pronto_wlan"
+
+# Inherit the proprietary files
+include vendor/samsung/m11q/BoardConfigVendor.mk
