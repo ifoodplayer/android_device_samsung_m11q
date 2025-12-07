@@ -70,7 +70,7 @@ vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
+#vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.light@3.0-service
 vendor/bin/hw/vendor.samsung.hardware.media.converter@1.0-service
@@ -554,7 +554,7 @@ vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/etc/init/vendor.samsung.hardware.base@1.0-service.rc
+#vendor/etc/init/vendor.samsung.hardware.base@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.light@3.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.media.converter@1.0-service.rc
@@ -620,7 +620,7 @@ vendor/etc/msm_irqbalance.conf
 vendor/etc/msm_irqbalance_little_big.conf
 vendor/etc/mtu-conf.xml
 vendor/etc/nfc/libnfc-nxp_RF.conf
-vendor/etc/passwd
+#vendor/etc/passwd
 vendor/etc/pdpcnt-conf.xml
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
@@ -654,9 +654,9 @@ vendor/etc/saiv/ld/regress_matrix_short_35pt.dat
 vendor/etc/sap.conf
 #vendor/etc/sec_config
 vendor/etc/sec_config_oem
-vendor/etc/seccomp_policy/mediacodec.policy
-vendor/etc/seccomp_policy/mediaextractor.policy
-vendor/etc/seccomp_policy/mediaextractor_sec.policy
+#vendor/etc/seccomp_policy/mediacodec.policy
+#vendor/etc/seccomp_policy/mediaextractor.policy
+#vendor/etc/seccomp_policy/mediaextractor_sec.policy
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/etc/somxreg.conf
@@ -676,13 +676,13 @@ vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
 vendor/etc/vintf/manifest/android.hardware.cas@1.1-service.xml
 vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
-vendor/etc/vintf/manifest/vendor.samsung.hardware.base@1.0-service.xml
+#vendor/etc/vintf/manifest/vendor.samsung.hardware.base@1.0-service.xml
 vendor/etc/wifi/WCNSS_qcom_cfg.ini
 vendor/etc/wifi/fstman.ini
 vendor/etc/wifi/grippower.info
 vendor/etc/wifi/indoorchannel.info
 vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/wpa_supplicant.conf
+#vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/etc/wlan_common_rc
 vendor/etc/wlan_vendor_rc
@@ -3353,7 +3353,7 @@ vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib/vendor.samsung.hardware.audio@1.0.so
-vendor/lib/vendor.samsung.hardware.base@1.0.so
+#vendor/lib/vendor.samsung.hardware.base@1.0.so
 vendor/lib/vendor.samsung.hardware.biometrics.face@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib/vendor.samsung.hardware.health@1.0.so
@@ -3918,9 +3918,9 @@ vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
-vendor/lib64/vendor.samsung.frameworks.security.dsms@1.0.so
+#vendor/lib64/vendor.samsung.frameworks.security.dsms@1.0.so
 vendor/lib64/vendor.samsung.hardware.audio@1.0.so
-vendor/lib64/vendor.samsung.hardware.base@1.0.so
+#vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.health@1.0.so
 vendor/lib64/vendor.samsung.hardware.light@3.0.so

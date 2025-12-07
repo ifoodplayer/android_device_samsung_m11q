@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * SPDX-License-Identifier: Apache-2.0
+ * Copyright (C) 2020 The LineageOS Project
+-->
+<resources>
+    <!-- 25W fast charging -->
+    <integer name="config_chargingFastThreshold">25000000</integer>
+</resources>

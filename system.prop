@@ -129,12 +129,6 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
-# set cutoff voltage to 3400mV
-ro.cutoff_voltage_mv=3400
-#set device emmc size
-ro.emmc_size=16GB
-#force HAL1 for below packages
-vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 #Enable FR27607-RIL to send ONLINE cmd in bootup
 #persist.radio.poweron_opt=1
 #low power mode for camera
@@ -144,8 +138,6 @@ persist.vendor.camera.display.umax=1920x1080
 persist.vendor.camera.display.lmax=1280x720
 #expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam
-#set cutoff voltage to 3400mV
-ro.cutoff_voltage_mv=3400
 # end of device/qcom/msm8953_64/system.prop
 
 #
