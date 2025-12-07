@@ -382,3 +382,6 @@ on boot
     chown system system /sys/class/leds/blue/breath
     chown system system /sys/class/leds/blue/delay_on
     chown system system /sys/class/leds/blue/delay_off
+
+# Only owner can acces this node
+    chmod 440 /proc/net/unix
