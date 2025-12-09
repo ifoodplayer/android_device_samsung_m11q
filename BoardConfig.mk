@@ -103,10 +103,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_ROOT_EXTRA_FOLDERS := efs
 BOARD_ROOT_EXTRA_SYMLINKS := \
-    /vendor/dsp:/dsp \
-    /vendor/firmware_mnt:/firmware \
-    /mnt/vendor/persist:/persist \
-    /mnt/vendor/efs:/efs
+	/vendor/dsp:/dsp \
+	/vendor/firmware_mnt:/firmware \
+	/mnt/vendor/persist:/persist \
+	/mnt/vendor/efs:/efs
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -172,7 +172,6 @@ AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := false
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -201,7 +200,6 @@ WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # FM
 BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # HIDL
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
@@ -255,9 +253,12 @@ BOARD_USES_QC_TIME_SERVICES := true
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.recovery.qcom
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true

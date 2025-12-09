@@ -247,9 +247,44 @@ user: AID_GPS
 group: AID_GPS
 caps: NET_BIND_SERVICE WAKE_ALARM BLOCK_SUSPEND
 
-
-[vendor/firmware_mnt/image/*]
+[firmware/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
+caps: 0
+
+[bt_firmware/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[firmware/image/*]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[vendor/firmware_mnt/image/*]
+mode: 0771
+user: AID_ROOT
+group: AID_SYSTEM
+caps: 0
+
+[persist/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[dsp/]
+mode: 0771
+user: AID_MEDIA
+group: AID_MEDIA
+caps: 0
+
+[efs/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_RADIO
 caps: 0

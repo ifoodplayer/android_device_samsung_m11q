@@ -230,12 +230,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
-# Media DRM
+# DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey \
     android.hardware.drm@1.2-service.widevine 
+
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor
 
 # Netutils
 PRODUCT_PACKAGES += \
