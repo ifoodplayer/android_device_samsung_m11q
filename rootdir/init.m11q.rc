@@ -30,3 +30,10 @@
 on boot
 # ZRAM
     swapon_all vendor/etc/fstab.qcom
+
+# This fixes the Bluetooth crash
+on post-fs-data
+    mkdir /data/vendor/conn 0770 system wifi
+    write /data/vendor/conn/.wifiver.info "CNSS.PR.4.0-00001"
+    chmod 0660 /data/vendor/conn/.wifiver.info
+    chown system wifi /data/vendor/conn/.wifiver.info
