@@ -531,16 +531,6 @@
         <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.audio</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehDevicesFactory</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehDevicesFactory/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.biometrics.face</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -579,26 +569,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@3.0::ISehLight/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.media.converter</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehColorConverterStore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehColorConverterStore/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.miscpower</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehMiscPower</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehMiscPower/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
@@ -641,26 +611,6 @@
         <fqname>@2.0::ISehChannel/imsd2</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.security.drk</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehDrk</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehDrk/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.security.widevine.keyprovisioning</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehWidevineKeyProvisioning</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehWidevineKeyProvisioning/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.vibrator</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -669,36 +619,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.0::ISehVibrator/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehWifi</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehWifi/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.hostapd</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehHostapd</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehHostapd/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.supplicant</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehSupplicant</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehSupplicant/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.silead.hardware.fingerprintext</name>
