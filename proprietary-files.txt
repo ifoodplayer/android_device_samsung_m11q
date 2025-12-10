@@ -619,7 +619,7 @@ vendor/etc/mkshrc
 vendor/etc/msm_irqbalance.conf
 vendor/etc/msm_irqbalance_little_big.conf
 vendor/etc/mtu-conf.xml
-vendor/etc/nfc/libnfc-nxp_RF.conf
+#vendor/etc/nfc/libnfc-nxp_RF.conf
 #vendor/etc/passwd
 vendor/etc/pdpcnt-conf.xml
 vendor/etc/perf/commonresourceconfigs.xml
