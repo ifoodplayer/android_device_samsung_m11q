@@ -25,7 +25,7 @@
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
-    <bool name="config_useDevInputEventForAudioJack">false</bool>
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
     <bool name="config_wifi_background_scan_support">true</bool>
     <bool name="config_wifi_batched_scan_supported">true</bool>
