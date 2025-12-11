@@ -55,6 +55,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     fstab.boot.qcom \
     fstab.qcom \
+    zram.fstab \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
 	init.m11q.rc \
