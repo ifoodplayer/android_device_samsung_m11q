@@ -89,6 +89,7 @@ on post-fs-data
 # HS70 code added for SR-ZQL1871-01-171 by tangqingyong at 20191031 start
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
+    swapon_all /vendor/etc/zram.fstab
 # HS70 code added for SR-ZQL1871-01-171 by tangqingyong at 20191031 end
 
 #start camera server as daemon

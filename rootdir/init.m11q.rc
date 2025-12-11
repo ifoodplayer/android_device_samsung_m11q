@@ -28,8 +28,16 @@
 #
 #
 on boot
-# ZRAM
-    swapon_all vendor/etc/fstab.qcom
+# SSWAP
+    write /proc/sys/vm/swappiness 130
+
+# SSWAP
+service swapon /sbin/sswap -s -z -f 1536
+    class core
+    user root
+    group root
+    seclabel u:r:sswap:s0
+    oneshot
 
 # This fixes the Bluetooth crash
 on post-fs-data
