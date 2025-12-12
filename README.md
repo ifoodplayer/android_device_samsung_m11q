@@ -4,7 +4,7 @@ The Samsung Galaxy M11 (codenamed "m11q") is a budget smartphone from Samsung.
 
 Status: Active & ARM64 Booted
 
-Bugs: Audio BT, Call Sound, SELinux
+Bugs: Call Sound & SELinux
 
 It was announced in March and released in May 2020.
 
