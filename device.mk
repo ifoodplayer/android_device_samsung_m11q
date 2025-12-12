@@ -27,7 +27,6 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
-    $(LOCAL_PATH)/overlay-lineage/packages/apps/Snap \
     $(LOCAL_PATH)/overlay-lineage/packages/apps/Updater
 
 # Screen density
@@ -151,10 +150,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
-    camera.msm8953 \
-    libmm-qcamera \
-    Snap
+    android.hardware.camera.provider@2.4-service
 
 # Display
 PRODUCT_PACKAGES += \
@@ -204,7 +200,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     SecureElement \
-    Tag \
+    Tag
 
 # NFC configs
 PRODUCT_COPY_FILES += \
