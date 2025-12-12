@@ -399,14 +399,6 @@ on post-fs-data
     #Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
 
-    # Smart Charging
-    chown system system /sys/class/power_supply/battery/battery_charging_enabled
-    chmod 0666 /sys/class/power_supply/battery/battery_charging_enabled
-    chown system system /sys/class/power_supply/battery/capacity
-    chmod 0666 /sys/class/power_supply/battery/capacity
-    chown system system /sys/class/power_supply/battery/temp
-    chmod 0666 /sys/class/power_supply/battery/temp
-
     # Mark the copy complete flag to not completed
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete
