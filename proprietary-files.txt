@@ -57,10 +57,10 @@ vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/bin/hw/android.hardware.usb@1.1-service.wahoo
 vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
 vendor/bin/hw/android.hardware.wifi@1.0-service
-vendor/bin/hw/capabilityconfigstoretest
+#vendor/bin/hw/capabilityconfigstoretest
 #vendor/bin/hw/hostapd
 vendor/bin/hw/macloader
-vendor/bin/hw/mfgloader
+#vendor/bin/hw/mfgloader
 vendor/bin/hw/rild
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/hw/vendor.focaltech.fingerprint@1.0-service
@@ -69,7 +69,7 @@ vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
+#vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
 vendor/bin/hw/vendor.samsung.hardware.light@3.0-service
 #vendor/bin/hw/vendor.samsung.hardware.media.converter@1.0-service
@@ -131,7 +131,7 @@ vendor/bin/toybox_vendor
 #vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/vndservice
-vendor/bin/vndservicemanager
+#vendor/bin/vndservicemanager
 vendor/bin/wcnss_service
 vendor/bin/wdsdaemon
 vendor/bin/wpa_cli
@@ -553,7 +553,7 @@ vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/etc/init/vendor.samsung.hardware.base@1.0-service.rc
+#vendor/etc/init/vendor.samsung.hardware.base@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.light@3.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.media.converter@1.0-service.rc
@@ -675,14 +675,14 @@ vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
 vendor/etc/vintf/manifest/android.hardware.cas@1.1-service.xml
 vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
-vendor/etc/vintf/manifest/vendor.samsung.hardware.base@1.0-service.xml
-vendor/etc/wifi/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/fstman.ini
-vendor/etc/wifi/grippower.info
-vendor/etc/wifi/indoorchannel.info
-vendor/etc/wifi/p2p_supplicant_overlay.conf
+#vendor/etc/vintf/manifest/vendor.samsung.hardware.base@1.0-service.xml
+#vendor/etc/wifi/WCNSS_qcom_cfg.ini
+#vendor/etc/wifi/fstman.ini
+#vendor/etc/wifi/grippower.info
+#vendor/etc/wifi/indoorchannel.info
+#vendor/etc/wifi/p2p_supplicant_overlay.conf
 #vendor/etc/wifi/wpa_supplicant.conf
-vendor/etc/wifi/wpa_supplicant_overlay.conf
+#vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/etc/wlan_common_rc
 vendor/etc/wlan_vendor_rc
 vendor/etc/xtra_root_cert.pem
@@ -3138,7 +3138,7 @@ vendor/lib/libreffeature.so
 vendor/lib/libremosaic_daemon.so
 vendor/lib/libril.so
 vendor/lib/librilutils.so
-vendor/lib/librmnetctl.so
+#vendor/lib/librmnetctl.so
 vendor/lib/librmp.so
 vendor/lib/librpmb.so
 vendor/lib/librs_adreno.so
@@ -3353,7 +3353,7 @@ vendor/lib/vendor.qti.latency@2.0.so
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib/vendor.samsung.hardware.audio@1.0.so
-vendor/lib/vendor.samsung.hardware.base@1.0.so
+#vendor/lib/vendor.samsung.hardware.base@1.0.so
 vendor/lib/vendor.samsung.hardware.biometrics.face@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib/vendor.samsung.hardware.health@1.0.so
@@ -3716,7 +3716,7 @@ vendor/lib64/libreference-ril.so
 vendor/lib64/libreffeature.so
 vendor/lib64/libril.so
 vendor/lib64/librilutils.so
-vendor/lib64/librmnetctl.so
+#vendor/lib64/librmnetctl.so
 vendor/lib64/librmp.so
 vendor/lib64/librpmb.so
 vendor/lib64/librs_adreno.so
@@ -3921,7 +3921,7 @@ vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 #vendor/lib64/vendor.samsung.frameworks.security.dsms@1.0.so
 vendor/lib64/vendor.samsung.hardware.audio@1.0.so
-vendor/lib64/vendor.samsung.hardware.base@1.0.so
+#vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.health@1.0.so
 vendor/lib64/vendor.samsung.hardware.light@3.0.so
