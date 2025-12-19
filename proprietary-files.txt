@@ -1,5 +1,9 @@
+# FM
 lib/fm_helium.so
 lib/libfm-hci.so
+
+# Bluetooth-AptX
+lib/libaptX_encoder.so
 
 vendor/bin/ATFWD-daemon
 vendor/bin/KmInstallKeybox
@@ -46,7 +50,7 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hw/android.hardware.cas@1.1-service
 #vendor/bin/hw/android.hardware.drm@1.0-service
 #vendor/bin/hw/android.hardware.drm@1.2-service.clearkey
-#vendor/bin/hw/android.hardware.drm@1.2-service.widevine
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/bin/hw/android.hardware.health@2.0-service.samsung
@@ -57,8 +61,8 @@ vendor/bin/hw/android.hardware.nfc@1.2-service.nxp
 #vendor/bin/hw/android.hardware.power@1.0-service
 vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/bin/hw/android.hardware.thermal@1.0-service
-vendor/bin/hw/android.hardware.usb@1.1-service.wahoo
-vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
+#vendor/bin/hw/android.hardware.usb@1.1-service.wahoo
+#vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
 vendor/bin/hw/android.hardware.wifi@1.0-service
 #vendor/bin/hw/capabilityconfigstoretest
 #vendor/bin/hw/hostapd
@@ -131,7 +135,7 @@ vendor/bin/time_client
 vendor/bin/time_daemon
 vendor/bin/toolbox
 vendor/bin/toybox_vendor
-#vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
+vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/vndservice
 #vendor/bin/vndservicemanager
@@ -526,7 +530,7 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/etc/init/android.hardware.cas@1.1-service.rc
 #vendor/etc/init/android.hardware.drm@1.0-service.rc
 #vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
-#vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
 vendor/etc/init/android.hardware.health@2.0-service.samsung.rc
@@ -536,7 +540,7 @@ vendor/etc/init/android.hardware.nfc@1.2-service.nxp.rc
 #vendor/etc/init/android.hardware.power@1.0-service.rc
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
-vendor/etc/init/android.hardware.usb@1.1-service.wahoo450.rc
+#vendor/etc/init/android.hardware.usb@1.1-service.wahoo450.rc
 vendor/etc/init/android.hardware.wifi@1.0-service.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/hostapd.android.rc
@@ -562,7 +566,7 @@ vendor/etc/init/vendor.samsung.hardware.light@3.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.media.converter@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.miscpower@2.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.security.drk@2.0-service.rc
-#vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service.rc
+vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.vibrator@2.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
@@ -3367,7 +3371,7 @@ vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
 vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
 #vendor/lib/vendor.samsung.hardware.security.drk@2.0.so
-#vendor/lib/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
+vendor/lib/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
 vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi.hostapd@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi.supplicant@2.0.so
@@ -3463,7 +3467,7 @@ vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 #vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
-vendor/lib64/hw/vendor.samsung.hardware.light@3.0-impl.so
+#vendor/lib64/hw/vendor.samsung.hardware.light@3.0-impl.so
 vendor/lib64/hw/vibrator.default.so
 vendor/lib64/hw/vulkan.msm8953.so
 #vendor/lib64/interfaces.customNvService@1.0.so
@@ -3927,7 +3931,7 @@ vendor/lib64/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.health@1.0.so
-vendor/lib64/vendor.samsung.hardware.light@3.0.so
+#vendor/lib64/vendor.samsung.hardware.light@3.0.so
 #vendor/lib64/vendor.samsung.hardware.media.converter@1.0.so
 #vendor/lib64/vendor.samsung.hardware.miscpower@2.0.so
 vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
@@ -3935,7 +3939,7 @@ vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib64/vendor.samsung.hardware.radio@2.0.so
 #vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
 #vendor/lib64/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
-vendor/lib64/vendor.samsung.hardware.vibrator@2.0.so
+#vendor/lib64/vendor.samsung.hardware.vibrator@2.0.so
 #vendor/lib64/vendor.samsung.hardware.wifi.hostapd@2.0.so
 #vendor/lib64/vendor.samsung.hardware.wifi.supplicant@2.0.so
 #vendor/lib64/vendor.samsung.hardware.wifi@2.0.so

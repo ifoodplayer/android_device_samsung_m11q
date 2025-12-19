@@ -242,6 +242,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_OTA_ASSERT_DEVICE := a11q,m11q,sdm450
 
 # Power
+TARGET_HAS_NO_WIFI_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Protobuf
@@ -261,9 +262,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
-# RIL
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
