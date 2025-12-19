@@ -2,7 +2,7 @@
 
 The Samsung Galaxy M11 (codenamed "m11q") is a budget smartphone from Samsung.
 
-Status: Active & ARM64 Booted
+Status: Booted (Build User variant is not booting)
 
 Bugs: Call Sound & SELinux
 
