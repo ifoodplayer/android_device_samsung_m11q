@@ -63,7 +63,7 @@ vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/bin/hw/android.hardware.thermal@1.0-service
 #vendor/bin/hw/android.hardware.usb@1.1-service.wahoo
 #vendor/bin/hw/android.hardware.usb@1.1-service.wahoo450
-vendor/bin/hw/android.hardware.wifi@1.0-service
+#vendor/bin/hw/android.hardware.wifi@1.0-service
 #vendor/bin/hw/capabilityconfigstoretest
 #vendor/bin/hw/hostapd
 vendor/bin/hw/macloader
@@ -541,7 +541,7 @@ vendor/etc/init/android.hardware.nfc@1.2-service.nxp.rc
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/etc/init/android.hardware.thermal@1.0-service.rc
 #vendor/etc/init/android.hardware.usb@1.1-service.wahoo450.rc
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
+#vendor/etc/init/android.hardware.wifi@1.0-service.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/hostapd.android.rc
 vendor/etc/init/init-qcril-data.rc
@@ -2858,7 +2858,7 @@ vendor/lib/libchromatix_s5k4h7_hs70_txd_preview.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_snapshot.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_zsl_preview.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_zsl_video.so
-vendor/lib/libcld80211.so
+#vendor/lib/libcld80211.so
 vendor/lib/libconfigdb.so
 vendor/lib/libcpion.so
 vendor/lib/libcppf.so
@@ -3129,7 +3129,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqrtr.so
-vendor/lib/libqsap_sdk.so
+#vendor/lib/libqsap_sdk.so
 vendor/lib/libqservice.so
 vendor/lib/libqsocket.so
 vendor/lib/libqti-iopd-client.so
@@ -3263,10 +3263,10 @@ vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libvqzip.so
 vendor/lib/libwebrtc_audio_preprocessing.so
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
-vendor/lib/libwifi-hal.so
-vendor/lib/libwpa_client.so
+#vendor/lib/libwifi-hal-ctrl.so
+#vendor/lib/libwifi-hal-qcom.so
+#vendor/lib/libwifi-hal.so
+#vendor/lib/libwpa_client.so
 vendor/lib/libwvhidl.so
 vendor/lib/libxcv.camera.samsung.so
 vendor/lib/libxml.so
@@ -3492,8 +3492,8 @@ vendor/lib64/libApeSwDec.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libCB.so
 vendor/lib64/libEGL_adreno.so
-vendor/lib64/libFactoryHALCommon.so
-vendor/lib64/libFactoryMetaAta.so
+#vendor/lib64/libFactoryHALCommon.so
+#vendor/lib64/libFactoryMetaAta.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
@@ -3566,7 +3566,7 @@ vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 #vendor/lib64/libchiponeic_fingerprint_factory.so
-vendor/lib64/libcld80211.so
+#vendor/lib64/libcld80211.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -3706,7 +3706,7 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
-vendor/lib64/libqsap_sdk.so
+#vendor/lib64/libqsap_sdk.so
 vendor/lib64/libqservice.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libqspower-1.2.1.so
@@ -3812,11 +3812,11 @@ vendor/lib64/libvndsecril-client.so
 #vendor/lib64/libwa_megface.so
 #vendor/lib64/libwa_rtdof.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
+#vendor/lib64/libwifi-hal-ctrl.so
+#vendor/lib64/libwifi-hal-qcom.so
+#vendor/lib64/libwifi-hal.so
 vendor/lib64/libwms.so
-vendor/lib64/libwpa_client.so
+#vendor/lib64/libwpa_client.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxcv.camera.samsung.so
 vendor/lib64/libxml.so
