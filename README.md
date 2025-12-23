@@ -1,12 +1,7 @@
-# Device Tree for the Samsung Galaxy M11 (_m11q_)
-
-The Samsung Galaxy M11 (codenamed "m11q") is a budget smartphone from Samsung.
+Device tree for the Samsung Galaxy A11/M11
+=================================================
 
 Status: Booted (Build User variant is not booting)
-
-Bugs: Call Sound & SELinux
-
-It was announced in March and released in May 2020.
 
   ## Device Specifications
  
@@ -27,6 +22,17 @@ It was announced in March and released in May 2020.
  Rear Camera (Depth) | 2 MP, f/2.4 (depth)
  Front Camera | 8 MP, f/2.0, 1/4.0", 1.12µm
  
+**ARM64 vendor was originally created by smiley9000**
+NOTE: I used the LineageOS Revived fork, if you are going to build it check if ro.zygote is 64_32 in out/target/product/m11q/vendor/default.prop if it is 32 put 64_32 do this before it builds the vendor image
+
+  In GSI these bugs are not happening
+|         Bugs - In ROM         |
+|------------------------------:|
+|Call sound                     |
+|BT Call Sound                  |
+|Face Unlock                    |
+|Wi-Fi disconnects on screen off|
+
  ## Device Picture
  
  ![Samsung Galaxy M11](https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-m11-sm-m115-1.jpg)

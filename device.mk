@@ -86,6 +86,18 @@ PRODUCT_PACKAGES += \
     init.qti.qseecomd.sh \
     qca6234-service.sh
 
+# Samsung Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml \
@@ -103,6 +115,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
@@ -125,11 +138,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.2-impl \
-    android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
     audio.primary.msm8953 \
     audio.r_submix.default \
-    audio.bluetooth.default \
     audio.usb.default \
     libaacwrapper \
     libaudio-resampler \
@@ -255,12 +266,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
-# RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
-
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
@@ -330,14 +335,14 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
 # For userdebug builds
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.adb.secure=0 \
 	ro.debuggable=1 \
 	persist.sys.root_access=1 \
 	persist.service.adb.enable=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb
 
 # Call the proprietary setup

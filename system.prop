@@ -1,7 +1,4 @@
 #
-# system.prop for m11q
-#
-
 # from device/qcom/msm8953_64/system.prop
 #
 #
@@ -29,6 +26,7 @@ debug.sf.latch_unsignaled=1
 debug.egl.hw=0
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
+dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1

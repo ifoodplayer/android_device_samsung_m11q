@@ -33,30 +33,7 @@
 #include "property_service.h"
 #include "log/log.h"
 
-char const *heaptargetutilization;
-char const *heapminfree;
-char const *heapmaxfree;
-
 using android::init::property_set;
-
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from phone-xhdpi-4096-dalvik-heap.mk
-        heaptargetutilization = "0.6";
-        heapminfree = "8m";
-        heapmaxfree = "16m";
-    } else {
-        // from phone-xhdpi-2048-dalvik-heap.mk
-        heaptargetutilization = "0.75";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-   }
-}
 
 void set_avoid_gfxaccel_config() {
     struct sysinfo sys;
@@ -68,15 +45,6 @@ void set_avoid_gfxaccel_config() {
     }
 }
 
-void vendor_load_properties()
-{
-    check_device();
+void vendor_load_properties() {
     set_avoid_gfxaccel_config();
-
-    property_set("dalvik.vm.heapstartsize", "8m");
-    property_set("dalvik.vm.heapgrowthlimit", "192m");
-    property_set("dalvik.vm.heapsize", "512m");
-    property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
 }
