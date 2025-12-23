@@ -1,0 +1,5 @@
+genfscon debugfs /rmt_storage u:object_r:debugfs_rmt:s0
+genfscon debugfs /wlan0   u:object_r:debugfs_wlan:s0
+
+# ProcFS
+genfscon proc /sys/vm/dirty_writeback_centisecs                       u:object_r:proc_dirty:s0
