@@ -266,6 +266,11 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

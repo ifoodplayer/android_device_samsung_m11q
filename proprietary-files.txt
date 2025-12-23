@@ -82,7 +82,7 @@ vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.media.converter@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.miscpower@2.0-service
 #vendor/bin/hw/vendor.samsung.hardware.security.drk@2.0-service
-vendor/bin/hw/vendor.samsung.hardware.vibrator@2.0-service
+#vendor/bin/hw/vendor.samsung.hardware.vibrator@2.0-service
 #vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
 vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
 #vendor/bin/hw/wpa_supplicant
@@ -567,8 +567,8 @@ vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.miscpower@2.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.security.drk@2.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.vibrator@2.0-service.rc
-#vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
+#vendor/etc/init/vendor.samsung.hardware.vibrator@2.0-service.rc
+#vendor/etc/init/   .0-service.rc
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
 vendor/etc/init/vk_common.rc
 vendor/etc/init/vk_qsee.rc
@@ -857,7 +857,7 @@ vendor/lib/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 #vendor/lib/hw/vendor.samsung.hardware.light@3.0-impl.so
-vendor/lib/hw/vibrator.default.so
+#vendor/lib/hw/vibrator.default.so
 vendor/lib/hw/vulkan.msm8953.so
 vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
@@ -3372,7 +3372,7 @@ vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
 #vendor/lib/vendor.samsung.hardware.security.drk@2.0.so
 vendor/lib/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0.so
-vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
+#vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi.hostapd@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi.supplicant@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi@2.0.so
@@ -3468,7 +3468,7 @@ vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.audio@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 #vendor/lib64/hw/vendor.samsung.hardware.light@3.0-impl.so
-vendor/lib64/hw/vibrator.default.so
+#vendor/lib64/hw/vibrator.default.so
 vendor/lib64/hw/vulkan.msm8953.so
 #vendor/lib64/interfaces.customNvService@1.0.so
 #vendor/lib64/interfaces.factoryAta@1.0.so
