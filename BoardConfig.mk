@@ -227,7 +227,6 @@ TARGET_PER_MGR_ENABLED := true
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_ODM_PROP := $(DEVICE_PATH)/odm.prop
 
 # System/Vendor/Product/Odm separation
@@ -242,7 +241,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_OTA_ASSERT_DEVICE := a11q,m11q,sdm450
 
 # Power
-TARGET_HAS_NO_WIFI_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Protobuf
