@@ -77,7 +77,7 @@ vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 #vendor/bin/hw/vendor.samsung.hardware.base@1.0-service
-vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
+#vendor/bin/hw/vendor.samsung.hardware.biometrics.face@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.light@3.0-service
 #vendor/bin/hw/vendor.samsung.hardware.media.converter@1.0-service
 #vendor/bin/hw/vendor.samsung.hardware.miscpower@2.0-service
@@ -561,7 +561,7 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 #vendor/etc/init/vendor.samsung.hardware.base@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
+#vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.light@3.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.media.converter@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.miscpower@2.0-service.rc
@@ -3361,7 +3361,7 @@ vendor/lib/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib/vendor.samsung.hardware.base@1.0.so
-vendor/lib/vendor.samsung.hardware.biometrics.face@1.0.so
+#vendor/lib/vendor.samsung.hardware.biometrics.face@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib/vendor.samsung.hardware.health@1.0.so
 #vendor/lib/vendor.samsung.hardware.light@3.0.so
