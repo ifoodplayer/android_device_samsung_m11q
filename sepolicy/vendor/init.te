@@ -1,16 +1,4 @@
-allow init fingerprint_device:chr_file { write ioctl };
+allow init self:netlink_kobject_uevent_socket { read };
+allow init init:netlink_kobject_uevent_socket { read };
 
-allow init fsg_firmware_file:dir mounton;
-allow init fsg_firmware_file:filesystem { relabelfrom mount };
-allow { fsg_firmware_file }self:filesystem associate;
-
-allow init hwservicemanager:binder { call transfer };
-allow init hidl_base_hwservice:hwservice_manager add;
-
-allow init ion_device:chr_file { read open ioctl };
-
-allow init system_server:binder { transfer call };
-
-allow init firmware_file:filesystem { getattr };
-allow init fsg_firmware_file:filesystem { getattr };
-allow init sysfs:file { setattr };
+allow init hal_fingerprint_default:unix_stream_socket connectto;

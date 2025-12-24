@@ -1,18 +1,13 @@
-dontaudit rild tombstone_data_file:dir search;
-dontaudit rild vendor_file:file ioctl;
+type secradio_data_file, file_type;
 
-allow rild fwk_sensor_hwservice:hwservice_manager find;
+allow rild secradio_data_file:dir { create write add_name search };
+allow rild secradio_data_file:file { create read write open getattr ioctl lock };
 
-allow rild cutback_ipc_file:dir rw_dir_perms;
-allow rild cutback_ipc_file:sock_file create_file_perms;
+allow rild tun_device:chr_file { read write open ioctl };
+allow rild self:tun_socket create;
 
-allow rild mnt_vendor_file:dir search;
-allow rild proc:file r_file_perms;
+allow rild efs_file:dir { search };
+allow rild efs_file:file { read open getattr };
 
-allow rild persist_file:dir search;
-allow rild persist_file:file rw_file_perms;
-
-allow rild vendor_file:file execute_no_trans;
-
-set_prop(rild, system_radio_prop)
-set_prop(rild, vendor_default_prop)
+allow time_daemon rild:dir search;
+allow time_daemon rild:file { read open getattr };
