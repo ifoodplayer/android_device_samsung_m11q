@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
+# TimeService (Prebuilt)
+PRODUCT_PACKAGES += \
+    TimeService
+
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
@@ -137,6 +141,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
+    android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
     audio.primary.msm8953 \
     audio.r_submix.default \
@@ -193,12 +198,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-    libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor \
-    vndservicemanager
+    android.hidl.manager@1.0
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -252,8 +252,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     android.system.net.netd@1.0 \
-    libandroid_net \
-    libnl
+    libandroid_net
 
 # Power
 PRODUCT_PACKAGES += \
@@ -336,6 +335,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# WIfi Display
+PRODUCT_PACKAGES += \
+    libnl
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
@@ -344,14 +347,14 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
 # For userdebug builds
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.adb.secure=0 \
 	ro.debuggable=1 \
 	persist.sys.root_access=1 \
 	persist.service.adb.enable=1
 
-#PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb
 
 # Call the proprietary setup

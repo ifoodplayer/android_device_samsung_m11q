@@ -1,6 +1,7 @@
 # FM
 lib/fm_helium.so
 lib/libfm-hci.so
+product/lib/vendor.qti.hardware.fm@1.0.so
 
 # Bluetooth-AptX
 lib/libaptX_encoder.so
@@ -138,7 +139,7 @@ vendor/bin/toybox_vendor
 vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/vndservice
-#vendor/bin/vndservicemanager
+vendor/bin/vndservicemanager
 vendor/bin/wcnss_service
 vendor/bin/wdsdaemon
 vendor/bin/wpa_cli
