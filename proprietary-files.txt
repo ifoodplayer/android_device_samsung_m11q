@@ -568,7 +568,7 @@ vendor/etc/init/vendor.samsung.hardware.biometrics.face@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.security.drk@2.0-service.rc
 vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.vibrator@2.0-service.rc
-#vendor/etc/init/   .0-service.rc
+#vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
 vendor/etc/init/vk_common.rc
 vendor/etc/init/vk_qsee.rc
@@ -842,7 +842,7 @@ vendor/lib/hw/gralloc.msm8953.so
 vendor/lib/hw/hwcomposer.msm8953.so
 vendor/lib/hw/keystore.msm8953.so
 vendor/lib/hw/libRbsFlow.so
-vendor/lib/hw/lights.msm8953.so
+#vendor/lib/hw/lights.msm8953.so
 vendor/lib/hw/local_time.default.so
 vendor/lib/hw/memtrack.msm8953.so
 vendor/lib/hw/power.default.so
@@ -3450,7 +3450,7 @@ vendor/lib64/hw/gralloc.msm8953.so
 vendor/lib64/hw/hwcomposer.msm8953.so
 vendor/lib64/hw/keystore.msm8953.so
 vendor/lib64/hw/libRbsFlow.so
-vendor/lib64/hw/lights.msm8953.so
+#vendor/lib64/hw/lights.msm8953.so
 vendor/lib64/hw/local_time.default.so
 vendor/lib64/hw/memtrack.msm8953.so
 vendor/lib64/hw/power.default.so
