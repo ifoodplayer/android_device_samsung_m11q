@@ -29,7 +29,6 @@ NOTE: I used the LineageOS Revived fork, if you are going to build it check if r
   In GSI these bugs are not happening
 |         Bugs - In ROM         |
 |------------------------------:|
-|Call sound                     |
 |BT Call Sound                  |
 |Face Unlock                    |
 |Wi-Fi disconnects on screen off|
