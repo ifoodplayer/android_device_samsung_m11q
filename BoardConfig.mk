@@ -64,7 +64,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOT_HEADER_VERSION := 2
@@ -212,6 +212,9 @@ TARGET_OTA_ASSERT_DEVICE := a11q,m11q,sdm450
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
+# RIL
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Protobuf
 PROTOBUF_SUPPORTED := true
 
@@ -233,6 +236,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Vndk
 BOARD_VNDK_VERSION := current
