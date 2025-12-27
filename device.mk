@@ -136,6 +136,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# BLuetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl.m11q \
@@ -250,11 +254,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
 
-# Netutils
+# Net
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0 \
     android.system.net.netd@1.0 \
-    libandroid_net
+    libandroid_net \
+    libnl
 
 # Power
 PRODUCT_PACKAGES += \
@@ -315,7 +319,7 @@ PRODUCT_COPY_FILES += \
 
 # QTI Permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
 # Powerhint
@@ -330,16 +334,11 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    wificond \
+    wcnss_service  \
     wpa_supplicant \
     wpa_supplicant.conf
-
-# WIfi Display
-PRODUCT_PACKAGES += \
-    libnl
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
