@@ -838,7 +838,7 @@ vendor/lib/hw/face.default.so
 vendor/lib/hw/fingerprint.egis.default.so
 vendor/lib/hw/fingerprint.focaltech.default.so
 vendor/lib/hw/fingerprint.silead.default.so
-#vendor/lib/hw/gatekeeper.msm8953.so
+vendor/lib/hw/gatekeeper.msm8953.so
 #vendor/lib/hw/gralloc.default.so
 #vendor/lib/hw/gralloc.msm8953.so
 #vendor/lib/hw/hwcomposer.msm8953.so
