@@ -815,14 +815,6 @@
        <path name="voicemmode1-call usb-headphones" />
     </path>
 
-    <path name="voicemmode1-call voice-speaker">
-        <path name="voicemmode1-call speaker" />
-    </path>
-
-    <path name="voicemmode1-call voice-speaker-2">
-        <path name="voicemmode1-call speaker" />
-    </path>
-
     <path name="voicemmode2-call">
         <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer TERT_MI2S_TX_MMode2" value="1" />
@@ -831,14 +823,6 @@
     <path name="voicemmode2-call bt-sco">
         <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer INT_BT_SCO_TX_MMode2" value="1" />
-    </path>
-
-    <path name="voicemmode2-call voice-speaker">
-        <path name="voicemmode2-call speaker" />
-    </path>
-
-    <path name="voicemmode2-call voice-speaker-2">
-        <path name="voicemmode2-call speaker" />
     </path>
 
     <path name="voicemmode2-call bt-sco-wb">
