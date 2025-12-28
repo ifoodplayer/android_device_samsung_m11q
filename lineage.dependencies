@@ -1,5 +1,9 @@
 [
     {
+        "repository": "android_device_samsung_sdm450_439-common",
+        "target_path": "device/samsung/sdm450_439-common"
+    },
+    {
         "repository": "android_hardware_samsung",
         "target_path": "hardware/samsung"
     }
