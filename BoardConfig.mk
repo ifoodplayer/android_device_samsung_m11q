@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit from common msm8953-common
--include device/samsung/sdm450_439-common/BoardConfigCommon.mk
+include device/samsung/sdm450_439-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/samsung/m11q
 BUILD_TOP := $(shell pwd)
