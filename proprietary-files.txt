@@ -88,10 +88,10 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 #vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
 vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
 #vendor/bin/hw/wpa_supplicant
-vendor/bin/ims_rtp_daemon
-vendor/bin/imsdatadaemon
-vendor/bin/imsqmidaemon
-vendor/bin/imsrcsd
+#vendor/bin/ims_rtp_daemon
+#vendor/bin/imsdatadaemon
+#vendor/bin/imsqmidaemon
+#vendor/bin/imsrcsd
 #vendor/bin/ipacm
 vendor/bin/ipacm-diag
 vendor/bin/irsc_util
@@ -572,8 +572,8 @@ vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-se
 #vendor/etc/init/vendor.samsung.hardware.vibrator@2.0-service.rc
 #vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
-vendor/etc/init/vk_common.rc
-vendor/etc/init/vk_qsee.rc
+#vendor/etc/init/vk_common.rc
+#vendor/etc/init/vk_qsee.rc
 vendor/etc/init/vndservicemanager.rc
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_qcom.rc
@@ -3131,7 +3131,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqrtr.so
-#vendor/lib/libqsap_sdk.so
+vendor/lib/libqsap_sdk.so
 vendor/lib/libqservice.so
 vendor/lib/libqsocket.so
 vendor/lib/libqti-iopd-client.so
@@ -3708,7 +3708,7 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqrtr.so
-#vendor/lib64/libqsap_sdk.so
+vendor/lib64/libqsap_sdk.so
 vendor/lib64/libqservice.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libqspower-1.2.1.so
@@ -3932,7 +3932,7 @@ vendor/lib64/vendor.qti.voiceprint@1.0.so
 #vendor/lib64/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
-vendor/lib64/vendor.samsung.hardware.health@1.0.so
+#vendor/lib64/vendor.samsung.hardware.health@1.0.so
 #vendor/lib64/vendor.samsung.hardware.light@3.0.so
 #vendor/lib64/vendor.samsung.hardware.media.converter@1.0.so
 #vendor/lib64/vendor.samsung.hardware.miscpower@2.0.so
