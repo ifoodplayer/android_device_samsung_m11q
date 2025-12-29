@@ -13,10 +13,14 @@
 # limitations under the License.
 
 # Inherit from common msm8953-common
--include device/samsung/sdm450-439/BoardConfigCommon.mk
+-include device/samsung/sdm450_439-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/samsung/m11q
 BUILD_TOP := $(shell pwd)
+
+# Plataform
+TARGET_BOARD_PLATFORM := msm8953
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
@@ -56,10 +60,6 @@ TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CONFIG := m11q_open_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 
-# Kernel Toolchain
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
-
 # Partition sizes
 BOARD_VENDORIMAGE_PARTITION_SIZE := 767557632
 
@@ -75,28 +75,17 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
-# System/Vendor/Product/Odm separation
-TARGET_COPY_OUT_SYSTEM := system
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_ODM := odm
-
 # Assert
 TARGET_OTA_ASSERT_DEVICE := a11q,m11q,sdm450
 
 # Recovery
-BOARD_HAS_DOWNLOAD_MODE := true
-BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
-TARGET_USERIMAGES_USE_F2FS := true
-TARGET_USERIMAGES_USE_EXT4 := true
 
-# TODO: SELinux
-include device/qcom/sepolicy-legacy-um/sepolicy.mk
+# SElinux - TODO
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-03-01
 
 # Inherit the proprietary files
-include vendor/samsung/m11q/BoardConfigVendor.mk
+-include vendor/samsung/m11q/BoardConfigVendor.mk

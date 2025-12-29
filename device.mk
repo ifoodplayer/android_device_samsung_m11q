@@ -15,20 +15,28 @@
 # Inherit from msm8953-common
 $(call inherit-product, device/samsung/sdm450_439-common/sdm450-439.mk)
 
+# Call the proprietary setup
+$(call inherit-product, vendor/samsung/m01q/m01q-vendor.mk)
+
 LOCAL_PATH := device/samsung/m11q
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
     $(LOCAL_PATH)/overlay-lineage/packages/apps/Updater
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1560
 TARGET_SCREEN_WIDTH := 720
+
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
