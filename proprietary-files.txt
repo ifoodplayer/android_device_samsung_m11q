@@ -550,7 +550,7 @@ vendor/etc/init/init-qcril-data.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/init.vendor.onebinary.rc
-vendor/etc/init/init.vendor.rilchip.rc
+#vendor/etc/init/init.vendor.rilchip.rc
 vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/ipacm.rc
