@@ -15,16 +15,17 @@
  */
 
 #include "core/default/ParametersUtil.h"
-#include "core/default/Conversions.h"
 #include "core/default/Util.h"
 
 #include <system/audio.h>
 #include <tinyalsa/asoundlib.h>
 
+#include <util/CoreUtils.h>
+
 namespace android {
 namespace hardware {
 namespace audio {
-namespace CPP_VERSION {
+namespace CORE_TYPES_CPP_VERSION {
 namespace implementation {
 
 constexpr int SLOT_POSITIONS_0[] = { 0, 1, 0, 1 };
@@ -61,6 +62,22 @@ void setSlotPositions(const int *values) {
 
     mixer_close(mixer);
 };
+
+void setAfeProxyMixers(bool enabled) {
+    const auto mixer = mixer_open(0);
+
+    if (mixer == nullptr) {
+        ALOGE("Failed to open mixer");
+        return;
+    }
+
+    for (int i = 1; i <= 16; i++) {
+        const auto mixerName = "AFE_PCM_RX Audio Mixer MultiMedia" + std::to_string(i);
+        setMixerValueByName(mixer, mixerName.c_str(), enabled);
+    }
+
+    mixer_close(mixer);
+}
 
 /** Converts a status_t in Result according to the rules of AudioParameter::get*
  * Note: Static method and not private method to avoid leaking status_t dependency
@@ -181,7 +198,10 @@ Result ParametersUtil::setParametersImpl(const hidl_vec<ParameterValue>& context
         params.add(String8(pair.key.c_str()), String8(pair.value.c_str()));
     }
     for (size_t i = 0; i < parameters.size(); ++i) {
-        if (parameters[i].key == "rotation") {
+        if (parameters[i].key == "bt_wbs") {
+            params.add(String8("g_sco_samplerate"),
+                       String8(parameters[i].value == AudioParameter::valueOn ? "16000" : "8000"));
+        } else if (parameters[i].key == "rotation") {
             if (parameters[i].value == "0") {
                 setSlotPositions(SLOT_POSITIONS_0);
             } else if (parameters[i].value == "90") {
@@ -197,9 +217,18 @@ Result ParametersUtil::setParametersImpl(const hidl_vec<ParameterValue>& context
     }
     return setParams(params);
 }
+
 Result ParametersUtil::setParam(const char* name, const DeviceAddress& address) {
-    AudioParameter params(String8(deviceAddressToHal(address).c_str()));
-    params.addInt(String8(name), int(address.device));
+    audio_devices_t halDeviceType;
+    char halDeviceAddress[AUDIO_DEVICE_MAX_ADDRESS_LEN];
+    if (CoreUtils::deviceAddressToHal(address, &halDeviceType, halDeviceAddress) != NO_ERROR) {
+        return Result::INVALID_ARGUMENTS;
+    }
+    if (halDeviceType == AUDIO_DEVICE_OUT_PROXY) {
+        setAfeProxyMixers(strcmp(name, "connect") == 0);
+    }
+    AudioParameter params{String8(halDeviceAddress)};
+    params.addInt(String8(name), halDeviceType);
     return setParams(params);
 }
 
@@ -209,7 +238,7 @@ Result ParametersUtil::setParams(const AudioParameter& param) {
 }
 
 }  // namespace implementation
-}  // namespace CPP_VERSION
+}  // namespace CORE_TYPES_CPP_VERSION
 }  // namespace audio
 }  // namespace hardware
 }  // namespace android

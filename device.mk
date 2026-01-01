@@ -48,18 +48,17 @@ PRODUCT_CHARACTERISTICS := default
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/samsung
 
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.boot.qcom \
     fstab.qcom \
     zram.fstab \
-    init.vendor.rilchip.rc \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
 	init.m11q.rc \
-    init.msm.usb.configfs.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
     init.qcom.rc \
@@ -73,7 +72,6 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
@@ -81,9 +79,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    init.qti.can.sh \
     init.qti.fm.sh \
-    init.qti.ims.sh \
     init.qti.qseecomd.sh \
     qca6234-service.sh
 
@@ -143,11 +139,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@5.0-impl.m11q \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.audio@6.0-impl.m11q:32 \
+    android.hardware.audio.service \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.2-impl:32 \
     audio.primary.msm8953:32 \
     audio.r_submix.default \
     audio.bluetooth.default \
@@ -157,7 +152,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
-    tinymix
+    libtinycompress
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
@@ -204,8 +199,8 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    libhidltransport.vendor \
+    libhwbinder.vendor
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -243,9 +238,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.3.vendor \
+    android.hardware.drm-service.clearkey
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -276,10 +270,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
-
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
 
 # RIL
 PRODUCT_PACKAGES += \

@@ -121,6 +121,8 @@ on late-fs
 on post-fs-data
 
 on boot
+    chown system system /sys/class/sec/sec_debug/FMM_lock
+    chmod 0660 /sys/class/sec/sec_debug/FMM_lock
 
 on shutdown
 

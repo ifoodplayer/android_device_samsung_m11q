@@ -31,10 +31,22 @@ on boot
 # SSWAP
     write /proc/sys/vm/swappiness 130
 
+# Pageboostd
+on property:sys.boot_completed=1
+    start pageboostd
+
+service pageboostd /system/bin/pageboostd
+    class main
+    user system
+    group system mount radio net_bt sdcard_rw shell media media_rw
+    socket pageboostd seqpacket 0660 system system
+    disabled
+
 # SSWAP
-service swapon /sbin/sswap -s -z -f 1536
+service swapon /system/bin/sswap -s -z -f 1536
     class core
-    user root
-    group root
+    user system
+    group system
+	capabilities SYS_ADMIN
     seclabel u:r:sswap:s0
     oneshot

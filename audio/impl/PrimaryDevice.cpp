@@ -19,11 +19,6 @@
 #include "core/default/PrimaryDevice.h"
 #include "core/default/Util.h"
 
-#include <cutils/properties.h>
-#include <string.h>
-#include <chrono>
-#include <thread>
-
 #if MAJOR_VERSION >= 4
 #include <cmath>
 #endif
@@ -34,9 +29,17 @@ namespace audio {
 namespace CPP_VERSION {
 namespace implementation {
 
+namespace util {
+using namespace ::android::hardware::audio::CORE_TYPES_CPP_VERSION::implementation::util;
+}
+
 PrimaryDevice::PrimaryDevice(audio_hw_device_t* device) : mDevice(new Device(device)) {}
 
-PrimaryDevice::~PrimaryDevice() {}
+PrimaryDevice::~PrimaryDevice() {
+    // Do not call mDevice->close here. If there are any unclosed streams,
+    // they only hold IDevice instance, not IPrimaryDevice, thus IPrimaryDevice
+    // "part" of a device can be destroyed before the streams.
+}
 
 // Methods from ::android::hardware::audio::CPP_VERSION::IDevice follow.
 Return<Result> PrimaryDevice::initCheck() {
@@ -74,28 +77,36 @@ Return<void> PrimaryDevice::getInputBufferSize(const AudioConfig& config,
 
 #if MAJOR_VERSION == 2
 Return<void> PrimaryDevice::openOutputStream(int32_t ioHandle, const DeviceAddress& device,
-                                             const AudioConfig& config,
-                                             AudioOutputFlagBitfield flags,
+                                             const AudioConfig& config, AudioOutputFlags flags,
                                              openOutputStream_cb _hidl_cb) {
     return mDevice->openOutputStream(ioHandle, device, config, flags, _hidl_cb);
 }
 
 Return<void> PrimaryDevice::openInputStream(int32_t ioHandle, const DeviceAddress& device,
-                                            const AudioConfig& config, AudioInputFlagBitfield flags,
+                                            const AudioConfig& config, AudioInputFlags flags,
                                             AudioSource source, openInputStream_cb _hidl_cb) {
     return mDevice->openInputStream(ioHandle, device, config, flags, source, _hidl_cb);
 }
 #elif MAJOR_VERSION >= 4
 Return<void> PrimaryDevice::openOutputStream(int32_t ioHandle, const DeviceAddress& device,
                                              const AudioConfig& config,
-                                             AudioOutputFlagBitfield flags,
+#if MAJOR_VERSION <= 6
+                                             AudioOutputFlags flags,
+#else
+                                             const AudioOutputFlags& flags,
+#endif
                                              const SourceMetadata& sourceMetadata,
                                              openOutputStream_cb _hidl_cb) {
     return mDevice->openOutputStream(ioHandle, device, config, flags, sourceMetadata, _hidl_cb);
 }
 
 Return<void> PrimaryDevice::openInputStream(int32_t ioHandle, const DeviceAddress& device,
-                                            const AudioConfig& config, AudioInputFlagBitfield flags,
+                                            const AudioConfig& config,
+#if MAJOR_VERSION <= 6
+                                            AudioInputFlags flags,
+#else
+                                            const AudioInputFlags& flags,
+#endif
                                             const SinkMetadata& sinkMetadata,
                                             openInputStream_cb _hidl_cb) {
     return mDevice->openInputStream(ioHandle, device, config, flags, sinkMetadata, _hidl_cb);
@@ -165,10 +176,30 @@ Return<Result> PrimaryDevice::setConnectedState(const DeviceAddress& address, bo
     return mDevice->setConnectedState(address, connected);
 }
 #endif
+#if MAJOR_VERSION >= 6
+Return<Result> PrimaryDevice::close() {
+    return mDevice->close();
+}
+
+Return<Result> PrimaryDevice::addDeviceEffect(AudioPortHandle device, uint64_t effectId) {
+    return mDevice->addDeviceEffect(device, effectId);
+}
+
+Return<Result> PrimaryDevice::removeDeviceEffect(AudioPortHandle device, uint64_t effectId) {
+    return mDevice->removeDeviceEffect(device, effectId);
+}
+
+Return<void> PrimaryDevice::updateAudioPatch(int32_t previousPatch,
+                                             const hidl_vec<AudioPortConfig>& sources,
+                                             const hidl_vec<AudioPortConfig>& sinks,
+                                             updateAudioPatch_cb _hidl_cb) {
+    return mDevice->updateAudioPatch(previousPatch, sources, sinks, _hidl_cb);
+}
+#endif
 
 // Methods from ::android::hardware::audio::CPP_VERSION::IPrimaryDevice follow.
 Return<Result> PrimaryDevice::setVoiceVolume(float volume) {
-    if (!isGainNormalized(volume)) {
+    if (!util::isGainNormalized(volume)) {
         ALOGW("Can not set a voice volume (%f) outside [0,1]", volume);
         return Result::INVALID_ARGUMENTS;
     }
@@ -177,37 +208,15 @@ Return<Result> PrimaryDevice::setVoiceVolume(float volume) {
 }
 
 Return<Result> PrimaryDevice::setMode(AudioMode mode) {
-    /* Samsung's libsec-ril sets a prop depending on the SIM that is calling
-     * at the moment. Using it we can determine the active slot and pass
-     * the call state together with vsid. */
-
-    char simSlot[92];
-
-    // This prop returns either -1 (no SIM is calling),
-    // 0 (SIM1 is calling) or 1 (SIM2 is calling)
-    property_get("vendor.calls.slotid", simSlot, "");
-
-    // Wait until RIL reports which SIM is being used
-    while (strcmp(simSlot, "-1") == 0 && mode == AudioMode::IN_CALL) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
-        property_get("vendor.calls.slotid", simSlot, "");
-    }
-
-    /* The hardcoded vsid values here are decimal VOICEMMODE1_VSID and VOICEMMODE2_VSID
-     * respectively, found in {QC_AUDIO_HAL}/hal/voice_extn/voice_extn.c.
-     * Parameter call_state 2 corresponds to CALL_ACTIVE and 1 to CALL_INACTIVE,
-     * both of which can be found in {QC_AUDIO_HAL}/hal/voice.h.
-     */
-    if (strcmp(simSlot, "0") == 0) {
-        // SIM1
-        mDevice->halSetParameters("call_state=2;vsid=297816064");
-    } else if (strcmp(simSlot, "1") == 0) {
-        // SIM2
-        mDevice->halSetParameters("call_state=2;vsid=299651072");
-    } else if (strcmp(simSlot, "-1") == 0) {
-        // No call
-        mDevice->halSetParameters("call_state=1");
-    }
+    // On regular QCOM devices, these parameters are set by QtiTelephonyService,
+    // which basically listens to vendor.qti.hardware.radio.am callbacks.
+    // The hardcoded vsid value here is decimal VOICEMMODE1_VSID which one can find
+    // in {QC_AUDIO_HAL}/hal/voice_extn/voice_extn.c. The current code doesn't
+    // handle VOICEMMODE2_VSID, but since we don't have any MSIM variants it's totally fine.
+    // Audio param call_state 2 corresponds to CALL_ACTIVE and 1 to CALL_INACTIVE respectively,
+    // both of which can be found in {QC_AUDIO_HAL}/hal/voice.h.
+    mDevice->halSetParameters(mode == AudioMode::IN_CALL ? "call_state=2;vsid=297816064"
+                                                         : "call_state=1;vsid=297816064");
 
     // INVALID, CURRENT, CNT, MAX are reserved for internal use.
     // TODO: remove the values from the HIDL interface
@@ -216,6 +225,9 @@ Return<Result> PrimaryDevice::setMode(AudioMode mode) {
         case AudioMode::RINGTONE:
         case AudioMode::IN_CALL:
         case AudioMode::IN_COMMUNICATION:
+#if MAJOR_VERSION >= 6
+        case AudioMode::CALL_SCREEN:
+#endif
             break;  // Valid values
         default:
             return Result::INVALID_ARGUMENTS;
@@ -328,7 +340,7 @@ Return<Result> PrimaryDevice::setBtHfpSampleRate(uint32_t sampleRateHz) {
     return mDevice->setParam(AUDIO_PARAMETER_KEY_HFP_SET_SAMPLING_RATE, int(sampleRateHz));
 }
 Return<Result> PrimaryDevice::setBtHfpVolume(float volume) {
-    if (!isGainNormalized(volume)) {
+    if (!util::isGainNormalized(volume)) {
         ALOGW("Can not set BT HFP volume (%f) outside [0,1]", volume);
         return Result::INVALID_ARGUMENTS;
     }

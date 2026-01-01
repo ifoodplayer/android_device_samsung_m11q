@@ -36,7 +36,8 @@ using ::android::hardware::hidl_string;
 using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
-using namespace ::android::hardware::audio::common::CPP_VERSION;
+using namespace ::android::hardware::audio::common::COMMON_TYPES_CPP_VERSION;
+using namespace ::android::hardware::audio::CORE_TYPES_CPP_VERSION;
 using namespace ::android::hardware::audio::CPP_VERSION;
 
 struct PrimaryDevice : public IPrimaryDevice {
@@ -54,21 +55,29 @@ struct PrimaryDevice : public IPrimaryDevice {
                                     getInputBufferSize_cb _hidl_cb) override;
 
     Return<void> openOutputStream(int32_t ioHandle, const DeviceAddress& device,
-                                  const AudioConfig& config, AudioOutputFlagBitfield flags,
+                                  const AudioConfig& config,
+#if MAJOR_VERSION <= 6
+                                  AudioOutputFlags flags,
+#else
+                                  const AudioOutputFlags& flags,
+#endif
 #if MAJOR_VERSION >= 4
                                   const SourceMetadata& sourceMetadata,
 #endif
                                   openOutputStream_cb _hidl_cb) override;
-
     Return<void> openInputStream(int32_t ioHandle, const DeviceAddress& device,
-                                 const AudioConfig& config, AudioInputFlagBitfield flags,
-                                 AudioSource source, openInputStream_cb _hidl_cb);
-#if MAJOR_VERSION >= 4
-    Return<void> openInputStream(int32_t ioHandle, const DeviceAddress& device,
-                                 const AudioConfig& config, AudioInputFlagBitfield flags,
-                                 const SinkMetadata& sinkMetadata,
-                                 openInputStream_cb _hidl_cb) override;
+                                 const AudioConfig& config,
+#if MAJOR_VERSION <= 6
+                                 AudioInputFlags flags,
+#else
+                                 const AudioInputFlags& flags,
 #endif
+#if MAJOR_VERSION == 2
+                                 AudioSource source,
+#elif MAJOR_VERSION >= 4
+                                 const SinkMetadata& sinkMetadata,
+#endif
+                                 openInputStream_cb _hidl_cb) override;
 
     Return<bool> supportsAudioPatches() override;
     Return<void> createAudioPatch(const hidl_vec<AudioPortConfig>& sources,
@@ -96,6 +105,14 @@ struct PrimaryDevice : public IPrimaryDevice {
     Return<void> getMicrophones(getMicrophones_cb _hidl_cb) override;
     Return<Result> setConnectedState(const DeviceAddress& address, bool connected) override;
 #endif
+#if MAJOR_VERSION >= 6
+    Return<Result> close() override;
+    Return<Result> addDeviceEffect(AudioPortHandle device, uint64_t effectId) override;
+    Return<Result> removeDeviceEffect(AudioPortHandle device, uint64_t effectId) override;
+    Return<void> updateAudioPatch(int32_t previousPatch, const hidl_vec<AudioPortConfig>& sources,
+                                  const hidl_vec<AudioPortConfig>& sinks,
+                                  updateAudioPatch_cb _hidl_cb) override;
+#endif
 
     Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& options) override;
 
@@ -119,8 +136,10 @@ struct PrimaryDevice : public IPrimaryDevice {
     Return<Result> setBtHfpVolume(float volume) override;
     Return<Result> updateRotation(IPrimaryDevice::Rotation rotation) override;
 #endif
-
-   private:
+#if MAJOR_VERSION == 7 && MINOR_VERSION == 1
+    Return<sp<::android::hardware::audio::V7_1::IDevice>> getDevice() override { return mDevice; }
+#endif
+  private:
     sp<Device> mDevice;
 
     virtual ~PrimaryDevice();
