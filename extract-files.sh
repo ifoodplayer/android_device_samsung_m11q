@@ -35,6 +35,17 @@ source "${HELPER}"
 #    esac
 #}
 
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib/hw/camera.msm8953.so)
+            "${PATCHELF}" --remove-needed android.hidl.base@1.0.so "${2}"
+            ;;
+        vendor/lib*/hw/android.hardware.health@2.0-impl-2.1-samsung.so)
+            "${PATCHELF}" --replace-needed libutils.so libutils-v30.so "${2}"
+            ;;
+    esac
+}
+
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
