@@ -26,11 +26,17 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib/libsec-ril.so)
+        vendor/lib*/libsec-ril.so|vendor/lib*/libsec-ril-dsds.so)
             sed -i 's/ril.dds.call.slotid/vendor.calls.slotid/g' "${2}"
+
+            "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+            "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
             ;;
-        vendor/lib/libsec-ril-dsds.so)
-            sed -i 's/ril.dds.call.slotid/vendor.calls.slotid/g' "${2}"
+        vendor/lib/mediadrm/libwvdrmengine.so)
+            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+            ;;
+        vendor/lib/libwvhidl.so)
+            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
             ;;
     esac
 }

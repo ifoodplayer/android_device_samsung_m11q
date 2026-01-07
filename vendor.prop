@@ -116,4 +116,8 @@ ro.config.dha_dialer_except_th=2048
 ro.config.dha_pwhl_key=0
 ro.sf.lcd_density=280
 sys.config.activelaunch_enable=true
+persist.service.adb.enable=1
+persist.service.debuggable=1
+persist.sys.usb.config=adb
+ro.adb.secure=0
 

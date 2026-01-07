@@ -1,5 +1,0 @@
-# RTC
-allow system_server sysfs_rtc:file r_file_perms;
-
-# socket (ok)
-allow system_server shell:unix_stream_socket getopt;

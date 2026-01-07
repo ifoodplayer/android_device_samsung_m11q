@@ -19,6 +19,6 @@
           {device} - Device name
           {type} - Build type
     -->
-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/ifoodplayer/ROM_OTA/lineage-17.1-M11/lineageOS.json</string>
-    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/ifoodplayer/ROM_OTA/lineage-17.1-M11/changelogs.txt</string>
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/ifoodplayer/ROM_OTA/lineage-18.1-M11/lineageOS.json</string>
+    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/ifoodplayer/ROM_OTA/lineage-18.1-M11/changelogs.txt</string>
 </resources>

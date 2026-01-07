@@ -1,4 +1,0 @@
-allow init self:netlink_kobject_uevent_socket { read };
-allow init init:netlink_kobject_uevent_socket { read };
-
-allow init hal_fingerprint_default:unix_stream_socket connectto;

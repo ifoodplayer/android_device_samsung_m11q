@@ -1,9 +1,1 @@
 /firmware		        u:object_r:firmware_file:s0
-
-/dev/silead_fp                          u:object_r:fingerprint_device:s0
-/vendor/bin/secril_config_svc  u:object_r:secril_config_exec:s0
-/data/vendor/secradio(/.*)?		u:object_r:vendor_radio_data_file:s0
-/bin/toolbox_vendor		u:object_r:vendor_toolbox_exec:s0
-
-# DRM
-/vendor/bin/hw/android\.hardware\.drm@1\.2-service.widevine		u:object_r:hal_drm_widevine_exec:s0

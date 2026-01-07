@@ -29,11 +29,18 @@
 #include <stdlib.h>
 #include <sys/sysinfo.h>
 
+#include <android-base/properties.h>
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log/log.h"
 
-using android::init::property_set;
+using android::base::GetProperty;
+int property_set(const char *key, const char *value) {
+    return __system_property_set(key, value);
+}
 
 void set_avoid_gfxaccel_config() {
     struct sysinfo sys;
