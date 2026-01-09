@@ -148,16 +148,13 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    audio.primary.msm8953:32 \
+    audio.primary.msm8953 \
     audio.r_submix.default \
     audio.bluetooth.default \
     audio.usb.default \
-    libaacwrapper \
-    libaudio-resampler \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libqcompostprocbundle \
-    tinymix
+    libqcomvisualizer \
+    libqcomvoiceprocessing
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \

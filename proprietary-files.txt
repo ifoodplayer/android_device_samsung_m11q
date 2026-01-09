@@ -3802,7 +3802,7 @@ vendor/lib64/libthermalclient.so
 vendor/lib64/libtime_genoff.so
 vendor/lib64/libtinycompress.so
 vendor/lib64/libtinycompress_vendor.so
-vendor/lib64/libtinyxml.so
+#vendor/lib64/libtinyxml.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libtzdrmgenprov.so
 #vendor/lib64/libulk_ancbase.so
