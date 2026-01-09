@@ -28,6 +28,9 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := msm8953
@@ -36,9 +39,6 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 # Board
 TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 TARGET_NO_BOOTLOADER := true
-
-TARGET_BOARD_SUFFIX := _64
-TARGET_USES_64_BIT_BINDER := true
 
 # Build flags
 BUILD_BROKEN_DUP_RULES := true
@@ -234,6 +234,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USES_MKE2FS := true
 
 # TODO: SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
