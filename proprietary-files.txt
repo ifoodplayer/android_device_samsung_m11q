@@ -847,8 +847,8 @@ vendor/lib/hw/libRbsFlow.so
 #vendor/lib/hw/lights.msm8953.so
 vendor/lib/hw/local_time.default.so
 #vendor/lib/hw/memtrack.msm8953.so
-vendor/lib/hw/power.default.so
-vendor/lib/hw/power.qcom.so
+#vendor/lib/hw/power.default.so
+#vendor/lib/hw/power.qcom.so
 vendor/lib/hw/thermal.msm8953.so
 vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -3455,8 +3455,8 @@ vendor/lib64/hw/libRbsFlow.so
 #vendor/lib64/hw/lights.msm8953.so
 vendor/lib64/hw/local_time.default.so
 #vendor/lib64/hw/memtrack.msm8953.so
-vendor/lib64/hw/power.default.so
-vendor/lib64/hw/power.qcom.so
+#vendor/lib64/hw/power.default.so
+#vendor/lib64/hw/power.qcom.so
 vendor/lib64/hw/thermal.msm8953.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
