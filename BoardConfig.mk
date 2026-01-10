@@ -83,10 +83,6 @@ TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CONFIG := m11q_open_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 
-# Kernel Toolchain
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
-
 # fix this up by examining /proc/mtd on a running device
 BOARD_PRODUCTIMAGE_PARTITION_SIZE := 1073741824
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608 #27
