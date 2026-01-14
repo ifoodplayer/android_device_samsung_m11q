@@ -177,9 +177,12 @@ ifeq ($(HOST_OS),linux)
 endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # FM
 BOARD_HAVE_QCOM_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
+BOARD_HAS_QCA_FM_SOC := "cherokee"
 
 # HIDL
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs

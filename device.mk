@@ -279,6 +279,10 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # RIL
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.epdg.support=true \
+    ro.radio.noril=no
+
 PRODUCT_PACKAGES += \
     librmnetctl \
     libcnefeatureconfig \
