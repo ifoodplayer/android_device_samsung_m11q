@@ -143,12 +143,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-service \
     android.hardware.audio@5.0-impl.m11q \
+    android.hardware.audio@2.0-service:32 \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     android.hardware.bluetooth.audio@2.0-impl \
-    audio.primary.msm8953 \
     audio.r_submix.default \
     audio.bluetooth.default \
     audio.usb.default \
