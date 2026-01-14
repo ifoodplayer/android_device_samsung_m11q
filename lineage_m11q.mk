@@ -30,3 +30,9 @@ PRODUCT_MODEL := SM-M115F
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="m11qnsxx-user 10 QP1A.190711.020 M115FXXU2AUC1 release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := "samsung/m11qnsxx/m11q:10/QP1A.190711.020/M115FXXU2AUC1:user/release-keys"

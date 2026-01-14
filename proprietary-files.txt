@@ -6,6 +6,9 @@ product/lib/vendor.qti.hardware.fm@1.0.so
 # Bluetooth-AptX
 lib/libaptX_encoder.so
 
+# TimeServices
+-vendor/app/TimeService/TimeService.apk
+
 # Vendor blobs
 vendor/bin/ATFWD-daemon
 vendor/bin/KmInstallKeybox
@@ -18,7 +21,6 @@ vendor/bin/athdiag
 vendor/bin/audioflacapp
 vendor/bin/awk
 vendor/bin/cdsprpcd
-#vendor/bin/cnd
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/bin/cplay
@@ -28,10 +30,9 @@ vendor/bin/diag_klog
 vendor/bin/diag_mdlog
 vendor/bin/diag_socket_log
 vendor/bin/diag_uart_log
-#vendor/bin/dpmQmiMgr
 vendor/bin/dumpsys
 vendor/bin/e_loop
-#vendor/bin/energy-awareness
+vendor/bin/energy-awareness
 vendor/bin/fm_qsoc_patches
 vendor/bin/fmconfig
 vendor/bin/fmfactorytest
@@ -40,15 +41,14 @@ vendor/bin/fstman
 vendor/bin/ftmdaemon
 vendor/bin/grep
 vendor/bin/hal_proxy_daemon
-#vendor/bin/hbtp_daemon
 vendor/bin/hostapd_cli
 vendor/bin/hqread
 vendor/bin/hvdcp_opti
 vendor/bin/hw/android.hardware.atrace@1.0-service
-vendor/bin/hw/android.hardware.audio@2.0-service
+#vendor/bin/hw/android.hardware.audio@2.0-service
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-#vendor/bin/hw/android.hardware.camera.provider@2.4-service
+vendor/bin/hw/android.hardware.camera.provider@2.4-service
 vendor/bin/hw/android.hardware.cas@1.1-service
 #vendor/bin/hw/android.hardware.drm@1.0-service
 #vendor/bin/hw/android.hardware.drm@1.2-service.clearkey
@@ -88,24 +88,17 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 #vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
 vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
 #vendor/bin/hw/wpa_supplicant
-#vendor/bin/ims_rtp_daemon
-#vendor/bin/imsdatadaemon
-#vendor/bin/imsqmidaemon
-#vendor/bin/imsrcsd
 #vendor/bin/ipacm
 vendor/bin/ipacm-diag
 vendor/bin/irsc_util
 vendor/bin/loc_launcher
 vendor/bin/logwrapper
 vendor/bin/lowi-server
-#vendor/bin/mlid
-#vendor/bin/mm-pp-dpps
 vendor/bin/mm-qcamera-app
 vendor/bin/mm-qjpeg-dec-test
 vendor/bin/mm-qjpeg-enc-test
 vendor/bin/mm-qomx-idec-test
 vendor/bin/mm-qomx-ienc-test
-#vendor/bin/msm_irqbalance
 vendor/bin/netmgrd
 vendor/bin/pktlogconf
 vendor/bin/pm-proxy
@@ -113,9 +106,6 @@ vendor/bin/pm-service
 vendor/bin/ptt_socket_app
 vendor/bin/qjpeg-dma-test
 #vendor/bin/qmi-framework-tests/qmi_test_mt_client_init_instance
-#vendor/bin/qrtr-cfg
-#vendor/bin/qrtr-lookup
-#vendor/bin/qrtr-ns
 vendor/bin/qseecom_sample_client
 vendor/bin/qseecomd
 vendor/bin/rmt_storage
@@ -137,6 +127,8 @@ vendor/bin/time_client
 vendor/bin/time_daemon
 vendor/bin/toolbox
 vendor/bin/toybox_vendor
+#vendor/bin/vaultkeeperd
+#vendor/bin/vendor.samsung.hardware.security.vaultkeeper@1.0-service
 vendor/bin/vendor.samsung.hardware.security.widevine.keyprovisioning@1.0-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/vndservice
@@ -146,8 +138,6 @@ vendor/bin/wdsdaemon
 vendor/bin/wpa_cli
 vendor/bin/wvkprov
 vendor/bin/xtra-daemon
-#vendor/bin/xtwifi-client
-#vendor/bin/xtwifi-inet-agent
 #vendor/etc/IPACM_cfg.xml
 #vendor/etc/Silence.wav
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -525,10 +515,10 @@ vendor/etc/hostapd/hostapd.accept
 vendor/etc/hostapd/hostapd.deny
 vendor/etc/hostapd/hostapd_default.conf
 vendor/etc/init/android.hardware.atrace@1.0-service.rc
-vendor/etc/init/android.hardware.audio@2.0-service.rc
+#vendor/etc/init/android.hardware.audio@2.0-service.rc
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-#vendor/etc/init/android.hardware.camera.provider@2.4-service.rc
+vendor/etc/init/android.hardware.camera.provider@2.4-service.rc
 vendor/etc/init/android.hardware.cas@1.1-service.rc
 #vendor/etc/init/android.hardware.drm@1.0-service.rc
 #vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
@@ -537,7 +527,7 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
 vendor/etc/init/android.hardware.health@2.0-service.samsung.rc
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
-vendor/etc/init/android.hardware.media.omx@1.0-service_qcom.rc
+vendor/etc/init/android.hardware.media.omx@1.0-service_qcom.rc:vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 vendor/etc/init/android.hardware.nfc@1.2-service.nxp.rc
 #vendor/etc/init/android.hardware.power@1.0-service.rc
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
@@ -550,10 +540,10 @@ vendor/etc/init/init-qcril-data.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/init.vendor.onebinary.rc
-#vendor/etc/init/init.vendor.rilchip.rc
+vendor/etc/init/init.vendor.rilchip.rc
 vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/init/ipacm-diag.rc
-vendor/etc/init/ipacm.rc
+#vendor/etc/init/ipacm.rc
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.focaltech.fingerprint@1.0-service.rc
@@ -601,7 +591,7 @@ vendor/etc/media_codecs_sec_secondary.xml
 vendor/etc/media_codecs_sec_video_primary.xml
 vendor/etc/media_codecs_vendor.xml
 vendor/etc/media_codecs_vendor_audio.xml
-#vendor/etc/media_profiles.xml
+vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_8953_v1.xml
 vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_vendor.xml
@@ -808,7 +798,7 @@ vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/ftm_fm_lib.so
-#vendor/lib/hw/activity_recognition.msm8953.so
+vendor/lib/hw/activity_recognition.msm8953.so
 #vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
 #vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
 #vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
@@ -816,7 +806,7 @@ vendor/lib/ftm_fm_lib.so
 #vendor/lib/hw/android.hardware.audio@4.0-impl.so
 #vendor/lib/hw/android.hardware.audio@5.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-#vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
 #vendor/lib/hw/android.hardware.drm@1.0-impl.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gnss@2.0-impl-qti.so
@@ -847,8 +837,8 @@ vendor/lib/hw/libRbsFlow.so
 #vendor/lib/hw/lights.msm8953.so
 vendor/lib/hw/local_time.default.so
 #vendor/lib/hw/memtrack.msm8953.so
-#vendor/lib/hw/power.default.so
-#vendor/lib/hw/power.qcom.so
+vendor/lib/hw/power.default.so
+vendor/lib/hw/power.qcom.so
 vendor/lib/hw/thermal.msm8953.so
 vendor/lib/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
@@ -2860,7 +2850,7 @@ vendor/lib/libchromatix_s5k4h7_hs70_txd_preview.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_snapshot.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_zsl_preview.so
 vendor/lib/libchromatix_s5k4h7_hs70_txd_zsl_video.so
-vendor/lib/libcld80211.so
+#vendor/lib/libcld80211.so
 vendor/lib/libconfigdb.so
 vendor/lib/libcpion.so
 vendor/lib/libcppf.so
@@ -3139,7 +3129,7 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqti-utils.so
-#vendor/lib/libqti_vndfwk_detect.so
+vendor/lib/libqti_vndfwk_detect.so
 vendor/lib/libqtigef.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib/libreference-ril.so
@@ -3266,7 +3256,7 @@ vendor/lib/libvpx.so
 vendor/lib/libvqzip.so
 vendor/lib/libwebrtc_audio_preprocessing.so
 #vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
+#vendor/lib/libwifi-hal-qcom.so
 #vendor/lib/libwifi-hal.so
 #vendor/lib/libwpa_client.so
 vendor/lib/libwvhidl.so
@@ -3415,7 +3405,7 @@ vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 #vendor/lib64/faceunlock_ca.default.so
 vendor/lib64/ftm_fm_lib.so
-#vendor/lib64/hw/activity_recognition.msm8953.so
+vendor/lib64/hw/activity_recognition.msm8953.so
 #vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
 #vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
 #vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
@@ -3424,7 +3414,7 @@ vendor/lib64/ftm_fm_lib.so
 #vendor/lib64/hw/android.hardware.audio@5.0-impl.so
 #vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-#vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
 #vendor/lib64/hw/android.hardware.drm@1.0-impl.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gnss@2.0-impl-qti.so
@@ -3455,8 +3445,8 @@ vendor/lib64/hw/libRbsFlow.so
 #vendor/lib64/hw/lights.msm8953.so
 vendor/lib64/hw/local_time.default.so
 #vendor/lib64/hw/memtrack.msm8953.so
-#vendor/lib64/hw/power.default.so
-#vendor/lib64/hw/power.qcom.so
+vendor/lib64/hw/power.default.so
+vendor/lib64/hw/power.qcom.so
 vendor/lib64/hw/thermal.msm8953.so
 vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
@@ -3568,7 +3558,7 @@ vendor/lib64/libcapiv2vop.so
 vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 #vendor/lib64/libchiponeic_fingerprint_factory.so
-vendor/lib64/libcld80211.so
+#vendor/lib64/libcld80211.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -3717,7 +3707,7 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
-#vendor/lib64/libqti_vndfwk_detect.so
+vendor/lib64/libqti_vndfwk_detect.so
 vendor/lib64/libqtigef.so
 vendor/lib64/libqtikeymaster4.so
 vendor/lib64/librcc.so
@@ -3815,7 +3805,7 @@ vendor/lib64/libvndsecril-client.so
 #vendor/lib64/libwa_rtdof.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
 #vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
+#vendor/lib64/libwifi-hal-qcom.so
 #vendor/lib64/libwifi-hal.so
 vendor/lib64/libwms.so
 #vendor/lib64/libwpa_client.so
@@ -3932,7 +3922,7 @@ vendor/lib64/vendor.qti.voiceprint@1.0.so
 #vendor/lib64/vendor.samsung.hardware.audio@1.0.so
 #vendor/lib64/vendor.samsung.hardware.base@1.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
-#vendor/lib64/vendor.samsung.hardware.health@1.0.so
+vendor/lib64/vendor.samsung.hardware.health@1.0.so
 #vendor/lib64/vendor.samsung.hardware.light@3.0.so
 #vendor/lib64/vendor.samsung.hardware.media.converter@1.0.so
 #vendor/lib64/vendor.samsung.hardware.miscpower@2.0.so

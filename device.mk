@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
     fstab.boot.qcom \
     fstab.qcom \
     zram.fstab \
-    init.vendor.rilchip.rc \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
 	init.m11q.rc \
@@ -165,11 +164,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -247,10 +241,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
-# fwk-detect
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor
-
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
@@ -260,8 +250,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
-    power.qcom
+    android.hardware.power@1.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -316,11 +305,14 @@ PRODUCT_COPY_FILES += \
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    hostapd \
-    libQWiFiSoftApCfg \
-    libwifi-hal-ctrl \
+    libcld80211 \
     libwpa_client \
-    wcnss_service \
+    hostapd \
+    wificond \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libQWiFiSoftApCfg \
+    wcnss_service  \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -338,14 +330,14 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp/,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
 # For userdebug builds
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
 	ro.adb.secure=0 \
 	ro.debuggable=1 \
 	persist.sys.root_access=1 \
 	persist.service.adb.enable=1
 
-PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb
 
 # Call the proprietary setup
