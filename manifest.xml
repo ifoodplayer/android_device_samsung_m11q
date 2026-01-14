@@ -551,6 +551,16 @@
         <fqname>@2.0::ISehGnss/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.samsung.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISehHealth</name>
+            <instance>sehhealth</instance>
+        </interface>
+        <fqname>@1.0::ISehHealth/sehhealth</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -610,7 +620,4 @@
         </interface>
         <fqname>@1.0::ISileadFingerprint/default</fqname>
     </hal>
-    <sepolicy>
-        <version>29.0</version>
-    </sepolicy>
 </manifest>
