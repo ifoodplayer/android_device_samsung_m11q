@@ -35,6 +35,8 @@ TARGET_USES_64_BIT_BINDER := true
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
+TARGET_ENFORCES_QSSI := true
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Board
 TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt
@@ -113,12 +115,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
-BOARD_QTI_CAMERA_32BIT_ONLY := true
-
-# CNE
-BOARD_USES_QCNE := true
 
 # NFC
 NXP_CHIP_TYPE := pn553
@@ -127,36 +124,29 @@ NXP_CHIP_TYPE := pn553
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
+TARGET_USES_ALIGNED_YCBCR_HEIGHT := true
+TARGET_USES_YCRCB_CAMERA_PREVIEW := true
+
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
-# Dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-
-# RIL
-ENABLE_VENDOR_RIL_SERVICE := true
-
 # FM
 BOARD_HAVE_QCOM_FM := true
-BOARD_HAS_QCA_FM_SOC := "cherokee"
+BOARD_HAS_QCA_FM_SOC := cherokee
+
+# RIL
+#BOARD_PROVIDES_LIBRIL := true
+ENABLE_VENDOR_RIL_SERVICE := true
+
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib/libsec-ril.so|libcutils_shim.so \
+    /vendor/lib/libsec-ril-dsds.so|libcutils_shim.so
 
 # HIDL
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_msm8953
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8953
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
@@ -214,7 +204,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2021-03-01
+VENDOR_SECURITY_PATCH := 2022-03-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
