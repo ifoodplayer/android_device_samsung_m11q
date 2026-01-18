@@ -58,7 +58,6 @@ PRODUCT_PACKAGES += \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
 	init.m11q.rc \
-    init.msm.usb.configfs.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
     init.qcom.rc \
@@ -72,7 +71,6 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
@@ -80,9 +78,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    init.qti.can.sh \
     init.qti.fm.sh \
-    init.qti.ims.sh \
     init.qti.qseecomd.sh \
     qca6234-service.sh
 

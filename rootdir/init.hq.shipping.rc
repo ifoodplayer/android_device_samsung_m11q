@@ -24,6 +24,8 @@ on post-fs
     chown system system /efs/*
     chmod 0771 /efs
     chmod 0771 /efs/*
+	chmod 0775 /efs/FactoryApp
+    chmod 0775 /efs/bluetooth
     chown system system /sys/class/sec/tsp/cmd
     chown system system /sys/class/sec/tsp/input/enabled
 # HS70 added by tangqingyong for HS70-12 at 20191009 end
