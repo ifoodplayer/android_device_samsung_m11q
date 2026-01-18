@@ -138,17 +138,22 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@5.0-impl.m11q \
-    android.hardware.audio@2.0-service:32 \
-    android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio@6.0-impl.m11q \
+    android.hardware.audio.service:32 \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.1-impl \
-    android.hardware.bluetooth.audio@2.0-impl \
     audio.r_submix.default \
-    audio.bluetooth.default \
     audio.usb.default \
+    liba2dpoffload \
+    libhdmiedid \
+    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvoiceprocessing \
+    libeffectsconfig \
+    libsndmonitor \
+    libspkrprot \
+    libtinycompress
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
