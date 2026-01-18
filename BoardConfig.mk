@@ -42,52 +42,35 @@ TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 TARGET_NO_BOOTLOADER := true
 
 # Build flags
+ALLOW_MISSING_DEPENDENCIES=true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-# Kernel
-TARGET_KERNEL_ARCH := arm64
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_RAMDISK_OFFSET := 0x02000000
-BOARD_SECOND_OFFSET := 0x00f00000
-BOARD_TAGS_OFFSET := 0x01e00000
-BOARD_RECOVERY_DTBO_SIZE := 2347796
-BOARD_RECOVERY_DTBO_OFFSET := 21106688
-BOARD_HEADER_SIZE := 1660
-BOARD_DTB_SIZE := 859398
-BOARD_DTB_OFFSET := 0x101f00000
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
-BOARD_KERNEL_PAGESIZE := 2048
+# Kernel - The build is breaking, so let's use the prebuilt to at least finish the build.
 BOARD_BOOT_HEADER_VERSION := 2
-
-BOARD_MKBOOTIMG_ARGS += \
-	--base $(BOARD_KERNEL_BASE) \
-	--pagesize $(BOARD_KERNEL_PAGESIZE) \
-	--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-	--tags_offset $(BOARD_TAGS_OFFSET) \
-	--kernel_offset $(BOARD_KERNEL_OFFSET) \
-	--second_offset $(BOARD_SECOND_OFFSET) \
-	--dtb_offset $(BOARD_DTB_OFFSET) \
-	--board $(TARGET_BOARD_PLATFORM) \
-	--header_version $(BOARD_BOOT_HEADER_VERSION) \
-	--dtb $(TARGET_PREBUILT_DTB)
-
-# Kernel config
-TARGET_KERNEL_VERSION := 4.9
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := m11q_open_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/m11q
 
-# Kernel Toolchain
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+# Kernel - prebuilt
+TARGET_FORCE_PREBUILT_KERNEL := true
+ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_INCLUDE_DTB_IN_BOOTIMG := 
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_KERNEL_SEPARATED_DTBO := 
+endif
 
-# fix this up by examining /proc/mtd on a running device
+# Partition Sizes
 BOARD_PRODUCTIMAGE_PARTITION_SIZE := 1073741824
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608 #27
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432 #62
