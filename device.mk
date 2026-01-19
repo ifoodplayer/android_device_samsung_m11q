@@ -134,22 +134,22 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl.m11q \
+    android.hardware.audio@6.0-impl.sdm450:32 \
     android.hardware.audio.service:32 \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
-    audio.r_submix.default \
-    audio.usb.default \
-    liba2dpoffload \
-    libhdmiedid \
-    libhfp \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libeffectsconfig \
-    libsndmonitor \
-    libspkrprot \
-    libtinycompress
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.1-impl:32 \
+    audio.r_submix.default:32 \
+    audio.usb.default:32 \
+    liba2dpoffload:32 \
+    libhdmiedid:32 \
+    libhfp:32 \
+    libqcompostprocbundle:32 \
+    libqcomvisualizer:32 \
+    libqcomvoiceprocessing:32 \
+    libeffectsconfig:32 \
+    libsndmonitor:32 \
+    libspkrprot:32 \
+    libtinycompress:32
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
