@@ -9,15 +9,15 @@ product                                                 /product               e
 vendor                                                  /vendor                ext4    ro,barrier=1,discard                                 wait,avb,logical,first_stage_mount
 odm                                                     /odm                   ext4    ro,errors=panic                                      wait,avb,logical,first_stage_mount
 
-/dev/block/platform/soc/7824900.sdhci/by-name/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,first_stage_mount,formattable,check
+/dev/block/platform/soc/7824900.sdhci/by-name/metadata  /metadata              ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic                         wait,first_stage_mount,formattable
 /dev/block/platform/soc/7824900.sdhci/by-name/prism     /prism                 ext4    ro,barrier=1,discard                                 nofail,avb,first_stage_mount
 /dev/block/platform/soc/7824900.sdhci/by-name/optics    /optics                ext4    ro,barrier=1,discard                                 nofail,avb,first_stage_mount
-/dev/block/bootdevice/by-name/userdata	/data	f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	latemount,wait,check,fileencryption=ice,quota,reservedsize=128M,checkpoint=fs
+/dev/block/bootdevice/by-name/userdata	/data	f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	latemount,wait,check
 
 #/dev/block/bootdevice/by-name/system         /                  ext4    ro,barrier=1,discard                        wait,avb
 # HS60 added by tangqingyong for HS60-15 at 20190722 start
 # HS60 code added for SR-ZQL1695-01-59 by tangqingyong at 20190729 start
-#/dev/block/bootdevice/by-name/userdata       /data              f2fs    noatime,nosuid,nodev,discard  wait,check,fileencryption=ice,quota,reservedsize=128M
+#/dev/block/bootdevice/by-name/userdata       /data              f2fs    noatime,nosuid,nodev,discard  wait,check
 # HS60 code added for SR-ZQL1695-01-59 by tangqingyong at 20190729 end
 # HS60 added by tangqingyong for HS60-15 at 20190722 end
 /dev/block/bootdevice/by-name/config         /frp               emmc    defaults                                    defaults
@@ -34,12 +34,12 @@ odm                                                     /odm                   e
 #/dev/block/bootdevice/by-name/optics		/optics			ext4	ro wait
 /dev/block/bootdevice/by-name/carrier	/carrier	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	defaults,nofail,check
 
-# VOLD:fstab_dynamic_partition.samsung(device/samsung/common_sdm450/)
+# VOLD:fstab.samsung (fstabs-4.9/fstab_non_AB_variant.qti)
 #/devices/soc/7864900.sdhci/mmc_host*         /storage/sdcard1   vfat    nosuid,nodev                                wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
 #/devices/soc/78db000.usb/msm_hsusb_host*     /storage/usbotg    vfat    nosuid,nodev                                wait,voldmanaged=usbotg:auto
 /devices/platform/soc/7864900.sdhci/mmc_host*        auto    vfat    defaults    voldmanaged=sdcard:auto
-/devices/platform/soc/7000000.ssusb*                 auto    auto    defaults    voldmanaged=usb:auto
+/devices/platform/soc/78db000.usb/msm_hsusb_host*    auto    auto    defaults    voldmanaged=usb:auto
 
 # Samsung ODE
-/dev/block/bootdevice/by-name/keydata	/keydata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,fileencryption=ice,nofail
-/dev/block/bootdevice/by-name/keyrefuge	/keyrefuge	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check,fileencryption=ice,nofail
+/dev/block/bootdevice/by-name/keydata	/keydata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check
+/dev/block/bootdevice/by-name/keyrefuge	/keyrefuge	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,check
