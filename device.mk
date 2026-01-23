@@ -186,7 +186,8 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.1.vendor:32 \
+    android.hardware.gnss.measurement_corrections@1.1.vendor:32 \
+    android.hardware.gnss.visibility_control@1.0.vendor:32 \
     android.hardware.gnss@2.1.vendor:32
 
 # Keymaster
@@ -234,13 +235,7 @@ PRODUCT_PACKAGES += \
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
-    IPACM_cfg.xml \
-    android.hardware.tetheroffload.config@1.0.vendor  \
-    android.hardware.tetheroffload.control@1.0.vendor
-
-# FastCharge
-PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.samsung
+    IPACM_cfg.xml
 
 # Light
 PRODUCT_PACKAGES += \
@@ -261,12 +256,11 @@ PRODUCT_PACKAGES += \
 
 # Capability Configstore
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor:32
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor:32 \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.3.vendor:32
 
 # fwk-detect
 PRODUCT_PACKAGES += \
@@ -286,7 +280,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power@1.2.vendor \
-    vendor.qti.hardware.perf@2.2.vendor
+    vendor.qti.hardware.perf@2.2.vendor:32
 
 # Sensors - Stock sensors are 32-bit
 PRODUCT_PACKAGES += \
