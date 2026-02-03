@@ -2659,6 +2659,9 @@ vendor/lib/libsl_fp_impl.so
 vendor/lib64/hw/cdfinger.fingerprint.default.so
 vendor/lib64/hw/fingerprint.egis.default.so
 vendor/lib64/hw/fingerprint.focaltech.default.so
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib/vendor.silead.hardware.fingerprintext@1.0.so
 vendor/lib/vendor.egistec.hardware.fingerprint@4.0.so
 vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 
@@ -2778,8 +2781,6 @@ vendor/lib/vendor.qti.gnss@3.0.so
 vendor/lib/vendor.qti.gnss@4.0.so
 vendor/lib/vendor.qti.hardware.cacert@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
-vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
-vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -3405,7 +3406,7 @@ vendor/lib/soundfx/libvisualizer.so
 #vendor/lib/vendor.display.config@2.0.so
 vendor/lib/vendor.qti.data.mwqem@1.0.so
 vendor/lib/vendor.qti.data.slm@1.0.so
-#vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
+vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_audio@2.1.so
 #vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so
 #vendor/lib/vendor.qti.hardware.btconfigstore@2.0.so
@@ -3423,9 +3424,7 @@ vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
 #vendor/lib/vendor.qti.hardware.display.mapper@4.0.so
 #vendor/lib/vendor.qti.hardware.display.mapperextensions@1.0.so
 #vendor/lib/vendor.qti.hardware.display.mapperextensions@1.1.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 #vendor/lib/vendor.qti.hardware.fstman@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
 #vendor/lib/vendor.qti.hardware.perf@1.0.so
 #vendor/lib/vendor.qti.hardware.perf@2.0.so
 #vendor/lib/vendor.qti.hardware.perf@2.1.so
@@ -3484,7 +3483,6 @@ vendor/lib/vendor.samsung.hardware.radio@2.1.so
 #vendor/lib/vendor.samsung.hardware.wifi.supplicant@3.0.so
 #vendor/lib/vendor.samsung.hardware.wifi@2.0.so
 #vendor/lib/vendor.samsung.hardware.wifi@2.1.so
-vendor/lib/vendor.silead.hardware.fingerprintext@1.0.so
 #vendor/lib/vintf-codecsolution-V1-ndk_platform.so
 #vendor/lib/vndk/libstagefright_foundation.so
 
@@ -3719,9 +3717,7 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 #vendor/lib64/vendor.qti.hardware.display.mapper@4.0.so
 #vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.0.so
 #vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.1.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 #vendor/lib64/vendor.qti.hardware.fstman@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
