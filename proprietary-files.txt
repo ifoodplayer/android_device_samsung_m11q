@@ -2542,6 +2542,16 @@ vendor/lib/libmmcamera_txd_ov13b10_hs70_eeprom.so
 vendor/lib/libmmcamera_txd_s5k4h7_hs70_eeprom.so
 vendor/lib/libmmcamera_xl_hi1336_hs70_eeprom.so
 vendor/lib/libmmcamera_xl_s5k3l6_hs70_eeprom.so
+vendor/lib64/libmmcamera2_frame_algorithm.so
+vendor/lib64/libmmcamera2_is.so
+vendor/lib64/libmmcamera2_q3a_core.so
+vendor/lib64/libmmcamera2_stats_algorithm.so
+vendor/lib64/libmmcamera2_stats_lib.so
+vendor/lib64/libmmcamera_dbg.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
+vendor/lib64/libmmcamera_tintless_algo.so
+vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
 # Charger
 vendor/bin/hvdcp_opti
@@ -2644,26 +2654,16 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Fingerprint
-vendor/bin/hw/vendor.focaltech.fingerprint@1.0-service
-vendor/etc/init/vendor.focaltech.fingerprint@1.0-service.rc
 vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
+vendor/lib/hw/fingerprint.silead.default.so
+vendor/lib/libsl_fp_impl.so
+vendor/lib/vendor.silead.hardware.fingerprintext@1.0.so
+
+# Fingerprint (shared dependencies)
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 -vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
-vendor/lib/hw/cdfinger.fingerprint.default.so
-vendor/lib/hw/fingerprint.egis.default.so
-vendor/lib/hw/fingerprint.focaltech.default.so
-vendor/lib/hw/fingerprint.silead.default.so
-vendor/lib/libsl_fp_impl.so
-vendor/lib64/hw/cdfinger.fingerprint.default.so
-vendor/lib64/hw/fingerprint.egis.default.so
-vendor/lib64/hw/fingerprint.focaltech.default.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib/vendor.silead.hardware.fingerprintext@1.0.so
-vendor/lib/vendor.egistec.hardware.fingerprint@4.0.so
-vendor/lib64/vendor.egistec.hardware.fingerprint@4.0.so
 
 # NFC
 vendor/bin/hw/android.hardware.nfc@1.1-service
@@ -2732,7 +2732,6 @@ vendor/firmware/wlan/prima/WCNSS_cfg.dat
 vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 vendor/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
-
 
 # GPS
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
@@ -3069,6 +3068,7 @@ vendor/etc/init/wifi_qcom.rc
 vendor/bin/hw/rild
 vendor/bin/adpl
 vendor/bin/ATFWD-daemon
+vendor/bin/secril_config_svc
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/bin/qrtr-cfg
@@ -3111,6 +3111,8 @@ vendor/lib/librilqmiservices-ext.so
 vendor/lib/libsec-ril-dsds.so
 vendor/lib/libsec-ril.so
 vendor/lib/libsecril-client.so
+vendor/lib/libvkmanager_vendor.so
+vendor/lib/libengmode_client.so
 vendor/lib/libsemnativecarrierfeature.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
@@ -3156,7 +3158,6 @@ vendor/lib/modules/pronto_wlan.ko
 vendor/bin/KmInstallKeybox
 vendor/bin/PktRspTest
 vendor/bin/StoreKeybox
-vendor/bin/secril_config_svc
 #vendor/bin/awk
 vendor/bin/btcoex_cont_config
 #vendor/bin/cplay
@@ -3361,7 +3362,6 @@ vendor/lib/libthermalclient.so
 #vendor/lib/libtinycompress.so
 #vendor/lib/libtinyxml.so
 vendor/lib/libtrustedapploader.so
-vendor/lib/libvkmanager_vendor.so
 #vendor/lib/libvkservice.so
 vendor/lib/libvndfwk_detect_jni.qti.so
 vendor/lib/libvorbisidec.so
@@ -3591,16 +3591,6 @@ vendor/lib64/libmfdevice.so
 vendor/lib64/libminkdescriptor.so
 vendor/lib64/libminksocket.so
 vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libmmcamera2_frame_algorithm.so
-vendor/lib64/libmmcamera2_is.so
-vendor/lib64/libmmcamera2_q3a_core.so
-vendor/lib64/libmmcamera2_stats_algorithm.so
-vendor/lib64/libmmcamera2_stats_lib.so
-vendor/lib64/libmmcamera_dbg.so
-vendor/lib64/libmmcamera_faceproc.so
-vendor/lib64/libmmcamera_faceproc2.so
-vendor/lib64/libmmcamera_tintless_algo.so
-vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 #vendor/lib64/libnbaio_mono.so
 vendor/lib64/libnetfilter_conntrack.so
 vendor/lib64/libnetmgr_nr_fusion.so
@@ -3924,7 +3914,6 @@ vendor/lib/libdsutils.so
 #vendor/lib/libeffectsconfig.so
 #vendor/lib/libengmode15.so
 #vendor/lib/libengmode2lite.so
-vendor/lib/libengmode_client.so
 #vendor/lib/libengmode_server.so
 #vendor/lib/libengmode_tlc.so
 vendor/lib/libets_teeclient_v2.so
