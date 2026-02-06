@@ -254,7 +254,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor:32
+    android.hardware.drm@1.4-service.clearkey \
+    android.hardware.drm@1.4.vendor
 
 # fwk-detect
 PRODUCT_PACKAGES += \
@@ -276,7 +277,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     vendor.qti.hardware.perf@2.2.vendor:32
 
-# Sensors - Stock sensors are 32-bit
+# Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:32 \
     android.hardware.sensors@1.0-service.sdm450
@@ -344,7 +345,7 @@ PRODUCT_COPY_FILES += \
 
 # Omx
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-service:32 \
+    android.hardware.media.omx@1.0-service \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
