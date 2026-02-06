@@ -213,9 +213,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
-TARGET_USERIMAGES_USE_F2FS := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USES_MKE2FS := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
