@@ -60,7 +60,6 @@ PRODUCT_PACKAGES += \
 	init.m11q.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
-    init.qcom.rc \
     init.qcom.usb.rc \
 	init.samsung.bsp.rc \
 	init.samsung.rc \
@@ -79,8 +78,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.qti.fm.sh \
-    init.qti.qseecomd.sh \
-    qca6234-service.sh
+    init.qti.qseecomd.sh
 
 # Samsung Doze
 PRODUCT_PACKAGES += \
