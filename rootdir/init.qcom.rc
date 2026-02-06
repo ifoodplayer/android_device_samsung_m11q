@@ -62,6 +62,9 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 on init
 
     # Support legacy paths
@@ -276,9 +279,6 @@ on boot
     #HS60 code for P190930-06236 by zhuxiaoming at 2019/10/10 end
     # limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
-
-    # Wifi firmware reload path
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 # msm specific files that need to be created on /data
 on post-fs-data
