@@ -57,7 +57,6 @@ PRODUCT_PACKAGES += \
     zram.fstab \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
-	init.m11q.rc \
     init.qcom.rc \
 	init.qcom.factory.rc \
     init.qcom.usb.rc \
