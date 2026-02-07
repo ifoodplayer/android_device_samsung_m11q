@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.fm.sh
 
-# Samsung Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
@@ -124,7 +120,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# BLuetooth
+# Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
@@ -162,13 +158,12 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor:32 \
     android.hardware.bluetooth.a2dp@1.0.vendor:32 \
     android.hardware.bluetooth.audio@2.0-impl:32 \
-    libbluetooth_audio_session:32 \
     audio.bluetooth.default:32 \
     libbt-hidlclient:32 \
     vendor.qti.hardware.btconfigstore@1.0.vendor:32 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:32
 
-# Fingerprint
+# Biometrics
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor:32
 
