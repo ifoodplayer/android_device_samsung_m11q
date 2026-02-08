@@ -103,6 +103,7 @@ on early-boot
 
 # HS70 code added for SR-ZQL1871-01-171 by tangqingyong at 20191031 start
 on late-fs
+    exec_start wait_for_keymaster
     mount_all /vendor/etc/fstab.qcom --late
     swapon_all /vendor/etc/zram.fstab
 
