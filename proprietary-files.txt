@@ -2588,12 +2588,15 @@ vendor/lib/vendor.qti.hardware.qseecom@1.0.so
 
 # DRM-Widevine
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
-vendor/bin/vendor.samsung.hardware.security.widevine.keyprov@1.0-service
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
-vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprov@1.0-service.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libwvhidl.so
+
+# DRM-Widevine key provisioning
+vendor/bin/vendor.samsung.hardware.security.widevine.keyprov@1.0-service
+vendor/bin/wvkprov
+vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprov@1.0-service.rc
 vendor/lib/vendor.samsung.hardware.security.widevine.keyprov@1.0.so
 
 # DSP
@@ -2664,23 +2667,10 @@ vendor/etc/init/nxp.android.hardware.nfc@1.1-service.rc
 vendor/firmware/nfc/libpn553_fw.so
 vendor/etc/init/init.nfc.samsung.rc
 vendor/etc/init/init.nfc.vendor.rc
-vendor/etc/libnfc-mtp-NQ3XX.conf
-vendor/etc/libnfc-mtp-NQ4XX.conf
-vendor/etc/libnfc-mtp_default.conf
-vendor/etc/libnfc-mtp_rf1.conf
-vendor/etc/libnfc-mtp_rf2.conf
+vendor/etc/nfc/libnfc-nxp_RF.conf
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
-vendor/etc/libnfc-qrd-NQ3XX.conf
-vendor/etc/libnfc-qrd-NQ4XX.conf
-vendor/etc/libnfc-qrd_default.conf
-vendor/etc/libnfc-qrd_rf1.conf
-vendor/etc/libnfc-qrd_rf2.conf
-vendor/lib/libpn547_fw.so
-vendor/lib/libpn548ad_fw.so
-vendor/lib/libpn551_fw.so
 vendor/lib/libpn553_fw.so
-vendor/lib/libpn557_fw.so
 vendor/lib/nfc_nci_nxp.so
 vendor/lib/vendor.nxp.nxpnfc@1.0.so
 vendor/lib/vendor.nxp.nxpnfc@1.1.so
@@ -3059,16 +3049,13 @@ vendor/lib64/libhdcpsrm.so
 # WiFi
 vendor/bin/hw/macloader
 vendor/bin/cnss-daemon
-vendor/bin/cnss_diag
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_qcom.rc
 
 # Radio
 vendor/bin/hw/rild
-vendor/bin/adpl
 vendor/bin/ATFWD-daemon
 vendor/bin/secril_config_svc
-vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
@@ -3077,8 +3064,6 @@ vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
-vendor/etc/init/dataadpl.rc
-vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/vendor.qti.tftp.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
@@ -3169,11 +3154,9 @@ vendor/bin/sigma_dut
 vendor/bin/spectraltool
 vendor/bin/storkd
 vendor/bin/tbaseLoader
-vendor/bin/wvkprov
 vendor/bin/xtra-daemon
 vendor/etc/audio_effects.conf
 vendor/etc/audio_effects_common.conf
-vendor/etc/audio_effects_sec.xml
 vendor/etc/audio_platform_info_intcodec.xml
 vendor/etc/audio_platform_info_sku3_tasha.xml
 vendor/etc/audio_platform_info_sku4.xml
@@ -3279,20 +3262,6 @@ vendor/lib/libvndfwk_detect_jni.qti.so
 vendor/lib/libvorbisidec.so
 vendor/lib/libvpx.so
 vendor/lib/libwebrtc_audio_preprocessing.so
-vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libaudioeffectoffload.so
-vendor/lib/soundfx/libbundlewrapper.so
-vendor/lib/soundfx/libdownmix.so
-vendor/lib/soundfx/libdynproc.so
-vendor/lib/soundfx/libeffectproxy.so
-vendor/lib/soundfx/libldnhncr.so
-vendor/lib/soundfx/libmyspace.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
-vendor/lib/soundfx/libreverbwrapper.so
-vendor/lib/soundfx/libshoebox.so
-vendor/lib/soundfx/libvisualizer.so
 vendor/lib/vendor.qti.data.mwqem@1.0.so
 vendor/lib/vendor.qti.data.slm@1.0.so
 vendor/lib/vendor.qti.hardware.buzzer@1.0.so
@@ -3334,8 +3303,6 @@ vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
 vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.1.so
-
-# Vendor lib64 from a20s
 vendor/lib64/hw/face.default.so
 vendor/lib64/hw/libRbsFlow.so
 vendor/lib64/libHMT.so
@@ -3472,7 +3439,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/etc/gpfspath_oem_config.xml
 vendor/etc/init/btcoex_cont_config.rc
-vendor/etc/init/dataadpl.rc
 vendor/etc/init/init.qti.fm.rc
 vendor/etc/init/init.vendor.onebinary.rc
 vendor/etc/init/init.vendor.rilchip.rc
@@ -3481,17 +3447,9 @@ vendor/etc/init/init.vendor.sysfw.rc
 vendor/etc/media_codecs_8953.xml
 vendor/etc/media_codecs_8953_v1.xml
 vendor/etc/media_codecs_ac4.xml
-vendor/etc/media_codecs_c2_sec.xml
-vendor/etc/media_codecs_c2_sec_ape.xml
-vendor/etc/media_codecs_c2_sec_qcp.xml
-vendor/etc/media_codecs_c2_sec_wmx.xml
 vendor/etc/media_codecs_ddp.xml
 vendor/etc/media_codecs_performance_8953.xml
 vendor/etc/media_codecs_performance_8953_v1.xml
-vendor/etc/media_codecs_sec_ape.xml
-vendor/etc/media_codecs_sec_primary.xml
-vendor/etc/media_codecs_sec_qcp.xml
-vendor/etc/media_codecs_sec_video_primary.xml
 vendor/etc/media_codecs_vendor.xml
 vendor/etc/media_codecs_vendor_audio.xml
 vendor/etc/media_profiles.xml
@@ -3507,21 +3465,10 @@ vendor/etc/mixer_paths_sku3_tasha.xml
 vendor/etc/mixer_paths_sku4.xml
 vendor/etc/mixer_paths_tasha.xml
 vendor/etc/mixer_paths_tashalite.xml
-vendor/etc/mkshrc
 vendor/etc/msm_irqbalance.conf
 vendor/etc/msm_irqbalance_little_big.conf
 vendor/etc/pdpcnt-conf.xml
 vendor/etc/playback_record_audio_policy_configuration.xml
-vendor/etc/public.libraries.txt.backup
-vendor/etc/sound_trigger_mixer_paths.xml
-vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
-vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
-vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
-vendor/etc/sound_trigger_platform_info.xml
-vendor/etc/thermal-engine_Global.conf
-vendor/etc/thermal-engine_HS50_Global.conf
-vendor/etc/thermal-engine_HS50_NA_EUR.conf
-vendor/etc/thermal-engine_NA.conf
 vendor/lib/hw/face.default.so
 vendor/lib/hw/libRbsFlow.so
 vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
