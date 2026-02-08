@@ -320,9 +320,7 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
-# NFC configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/nfc/libnfc-nxp_RF.conf \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/permissions/,$(TARGET_COPY_OUT_ODM)/etc/permissions) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc/vintf/,$(TARGET_COPY_OUT_ODM)/etc/vintf)
 
