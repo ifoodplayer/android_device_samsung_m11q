@@ -138,7 +138,3 @@ ro.vendor.hq.project.name=HS71
 ro.sf.lcd_density=280
 vendor.hw.fm.init=0
 ro.camera.notify_nfc=1
-persist.service.adb.enable=1
-persist.service.debuggable=1
-persist.sys.usb.config=adb
-ro.adb.secure=0
