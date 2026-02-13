@@ -1,5 +1,5 @@
-# lib64 are from the a20s
-# a20sxx-user 11 RP1A.200720.012 A207FXXS4CVL1 release-keys
+# All files containing lib64 are from the a20s
+# a20sxx-user 11 RP1A.200720.012 A207FXXS3CVD1 release-keys
 
 # Files below are from m11q
 # m11qnsxx-user 11 RP1A.200720.012 M115FXXU3BVD1 release-keys
