@@ -43,9 +43,6 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# Product characteristics
-PRODUCT_CHARACTERISTICS := default
-
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -103,7 +100,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
@@ -215,11 +211,8 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    libhidltransport \
     libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor \
-    vndservicemanager
+    libhwbinder.vendor
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -240,7 +233,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl:64 \
+    android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
 # Capability Configstore
@@ -279,8 +272,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v30.so \
-    prebuilts/vndk/v30/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v30.so
+    prebuilts/vndk/v30/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v30.so
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -338,7 +330,6 @@ PRODUCT_COPY_FILES += \
 
 # Omx
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-service \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
