@@ -1,32 +1,4 @@
-ro.frp.pst=/dev/block/persistent
-persist.vendor.qcomsysd.enabled=0
-debug.stagefright.omx_default_rank=0
-dalvik.vm.heapminfree=6m
-dalvik.vm.heapstartsize=14m
-vendor.mediacodec.binder.size=6
-vendor.vidc.disable.split.mode=1
-dalvik.vm.heapgrowthlimit=192m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapmaxfree=8m
-vendor.display.disable_ext_anim=1
-ro.hardware.nfc_nci=nqx.default
-ro.apex.updatable=true
-dalvik.vm.lockprof.threshold=500
-ro.carrier=unknown
-vendor.sec.rild.libpath=/vendor/lib/libsec-ril.so
-vendor.sec.rild.libpath2=/vendor/lib/libsec-ril-dsds.so
-persist.vendor.cne.feature=0
-persist.vendor.radio.atfwd.start=true
-ro.vendor.extension_library=libqti-perfd-client.so
-persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.sib16_support=1
-persist.vendor.radio.rat_on=combine
-sys.vendor.shutdown.waittime=500
-persist.vendor.radio.procedure_bytes=SKIP
-ro.opengles.version=196610
-af.fast_track_multiplier=1
+# Audio
 vendor.audio_hal.period_size=192
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
@@ -53,16 +25,11 @@ vendor.audio.playback.mch.downsample=true
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.pp.asphere.enabled=false
-vendor.voice.playback.conc.disabled=true
-vendor.voice.record.conc.disabled=false
-vendor.voice.voip.conc.disabled=true
-vendor.voice.conc.fallbackpath=deep-buffer
 persist.vendor.audio.speaker.prot.enable=false
 vendor.audio.hw.aac.encoder=true
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio.read.wsatz.type=true
-ro.af.client_heap_size_kbyte=7168
 persist.vendor.audio.hw.binder.size_kbyte=1024
 vendor.audio.spkr_prot.tx.sampling_rate=48000
 vendor.audio.feature.snd_mon.enable=true
@@ -106,11 +73,8 @@ vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.auto_hal.enable=false
 vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.incall_music.enable=true
-persist.vendor.sensor.hw.binder.size=8
-persist.vendor.radio.enableadvancedscan=false
-vendor.display.disable_skip_validate=1
-ro.hardware.vulkan=adreno
-ro.hardware.egl=adreno
+
+# Bluetooth
 bluetooth.device.default_name=Galaxy M11
 bluetooth.profile.asha.central.enabled?=true
 bluetooth.profile.a2dp.source.enabled?=true
@@ -131,10 +95,67 @@ ro.bluetooth.a2dp_offload.supported=false
 persist.vendor.qcom.bluetooth.soc=pronto
 persist.vendor.qcom.bluetooth.enable.splita2dp=false
 ro.vendor.bluetooth.wipower=false
-ro.telephony.iwlan_operation_mode=legacy
+
+# Dalvik
+dalvik.vm.heapminfree=6m
+dalvik.vm.heapstartsize=14m
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapmaxfree=8m
+
+# Display
+vendor.display.disable_ext_anim=1
+vendor.display.disable_skip_validate=1
+
+# FRP
+ro.frp.pst=/dev/block/persistent
+
+# Graphics
+ro.hardware.vulkan=adreno
+ro.hardware.egl=adreno
+ro.opengles.version=196610
+
+# Qualcomm System Daemon
+persist.vendor.qcomsysd.enabled=0
+
+# Radio/RIL
+persist.vendor.cne.feature=0
+vendor.sec.rild.libpath=/vendor/lib/libsec-ril.so
+vendor.sec.rild.libpath2=/vendor/lib/libsec-ril-dsds.so
+persist.vendor.radio.atfwd.start=true
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.sib16_support=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.enableadvancedscan=false
+
+# Shutdown
+sys.vendor.shutdown.waittime=500
+
+# USB
+vendor.usb.diag.func.name=diag
+vendor.usb.use_ffs_mtp=0
+vendor.usb.use_gadget_hal=0
+
+# Sensor
+persist.vendor.sensor.hw.binder.size=8
+
+# Misc
+vendor.vidc.disable.split.mode=1
+ro.hardware.nfc_nci=nqx.default
+dalvik.vm.lockprof.threshold=500
+ro.vendor.extension_library=libqti-perfd-client.so
+af.fast_track_multiplier=1
+vendor.voice.playback.conc.disabled=true
+vendor.voice.record.conc.disabled=false
+vendor.voice.voip.conc.disabled=true
+vendor.voice.conc.fallbackpath=deep-buffer
+ro.af.client_heap_size_kbyte=7168
+vendor.mediacodec.binder.size=6
 ro.vendor.cam.name=HS70
 ro.vendor.fingerprintUI=1
 ro.vendor.hq.project.name=HS71
-ro.sf.lcd_density=280
 vendor.hw.fm.init=0
 ro.camera.notify_nfc=1
