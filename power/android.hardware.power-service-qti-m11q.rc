@@ -1,7 +1,7 @@
 on init
     chown system system /sys/class/sec/tsp/input/enabled
 
-service vendor.power /vendor/bin/hw/android.hardware.power-service-qti-sdm450
+service vendor.power /vendor/bin/hw/android.hardware.power-service-qti-m11q
     class hal
     user system
     group system

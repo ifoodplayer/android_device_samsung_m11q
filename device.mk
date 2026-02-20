@@ -122,7 +122,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl.sdm450:32 \
+    android.hardware.audio@6.0-impl.m11q:32 \
     android.hardware.audio.service:32 \
     android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.soundtrigger@2.1-impl:32 \
@@ -260,14 +260,14 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti-sdm450 \
+    android.hardware.power-service-qti-m11q \
     android.hardware.power@1.2.vendor \
     vendor.qti.hardware.perf@2.2.vendor:32
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:32 \
-    android.hardware.sensors@1.0-service.sdm450
+    android.hardware.sensors@1.0-service-m11q
 
 # VNDK
 PRODUCT_COPY_FILES += \

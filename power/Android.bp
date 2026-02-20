@@ -1,5 +1,5 @@
 cc_library_headers {
-    name: "qti_sdm450_powerhal_headers",
+    name: "qti_m11q_powerhal_headers",
     vendor_available: true,
     export_include_dirs: ["."],
 }
