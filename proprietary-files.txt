@@ -2642,7 +2642,7 @@ vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib/vendor.qti.esepowermanager@1.1.so
 
-# FM - Extracted from the a20s
+# FM
 app/FmTest/lib/arm64/fm_helium.so:system_ext/lib64/fm_helium.so
 app/FmTest/lib/arm64/libfm-hci.so:system_ext/lib64/libfm-hci.so
 app/FmTest/lib/arm64/vendor.qti.hardware.fm@1.0.so:system_ext/lib64/vendor.qti.hardware.fm@1.0.so
@@ -3030,6 +3030,13 @@ vendor/lib/libUBWC.so
 vendor/lib/libstreamparser.so
 vendor/lib64/libUBWC.so
 vendor/lib64/libstreamparser.so
+
+# Vibrator
+vendor/bin/hw/vendor.samsung.hardware.vibrator@2.2-service
+vendor/etc/init/vendor.samsung.hardware.vibrator@2.2-service.rc
+vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
+vendor/lib/vendor.samsung.hardware.vibrator@2.1.so
+vendor/lib/vendor.samsung.hardware.vibrator@2.2.so
 
 # Voice
 vendor/lib/vendor.qti.voiceprint@1.0.so
@@ -3431,8 +3438,6 @@ vendor/etc/mixer_paths_sku3_tasha.xml
 vendor/etc/mixer_paths_sku4.xml
 vendor/etc/mixer_paths_tasha.xml
 vendor/etc/mixer_paths_tashalite.xml
-vendor/etc/msm_irqbalance.conf
-vendor/etc/msm_irqbalance_little_big.conf
 vendor/etc/pdpcnt-conf.xml
 vendor/etc/playback_record_audio_policy_configuration.xml
 vendor/lib/hw/face.default.so
