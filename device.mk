@@ -45,7 +45,11 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/samsung
+
+# TEMP: For support VNDK32
+PRODUCT_EXTRA_VNDK_VERSIONS := 32
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -199,10 +203,6 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.display.config@2.0.vendor
 
-# Config Store
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
@@ -233,7 +233,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.3.vendor:32
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # Capability Configstore
 PRODUCT_PACKAGES += \
@@ -241,8 +242,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm@1.3.vendor \
+    android.hardware.drm-service.clearkey
 
 # fwk-detect
 PRODUCT_PACKAGES += \
@@ -289,7 +290,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2.vendor:32 \
     android.hardware.radio.deprecated@1.0.vendor:32 \
     android.hardware.secure_element@1.0.vendor:32 \
-    libcnefeatureconfig \
     libxml2 \
     libcutils_shim
 
