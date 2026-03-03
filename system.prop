@@ -6,3 +6,6 @@ ro.fastbootd.available=true
 
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
+
+# Fwk detect
+ro.vendor.qti.va_aosp.support=1
