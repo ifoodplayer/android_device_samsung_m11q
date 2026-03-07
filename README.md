@@ -1,7 +1,7 @@
 Device tree for the Samsung Galaxy A11/M11
 =================================================
 
-Status: Booted
+Status: Work in Progress
 
   ## Device Specifications
  
