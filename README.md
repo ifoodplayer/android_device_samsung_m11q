@@ -1,7 +1,7 @@
 Device tree for the Samsung Galaxy A11/M11
 =================================================
 
-Status: VNDK32 Booted
+Status: Booted
 
   ## Device Specifications
  

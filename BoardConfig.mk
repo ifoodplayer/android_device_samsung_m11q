@@ -89,7 +89,7 @@ endif
 # Kernel config
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_SOURCE := kernel/samsung/sdm450
 TARGET_KERNEL_CONFIG := a11q_open_defconfig
 TARGET_KERNEL_VERSION := 4.9
 
