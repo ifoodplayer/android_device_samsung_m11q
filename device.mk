@@ -198,10 +198,6 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.display.config@2.0.vendor
 
-# Config Store
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
