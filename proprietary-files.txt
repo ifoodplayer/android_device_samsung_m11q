@@ -2652,7 +2652,7 @@ vendor/lib/vendor.silead.hardware.fingerprintext@1.0.so
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# Fingerprint (shared dependencies)
+# Biometrics - Service extracted from A20s
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 -vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
@@ -2672,6 +2672,7 @@ vendor/lib/vendor.nxp.nxpnfc@1.0.so
 vendor/lib/vendor.nxp.nxpnfc@1.1.so
 
 # Firmware
+etc/firmware/ice40.bin:vendor/firmware/ice40.bin
 vendor/firmware/Conf_MultipleTest_DPT-BOE-20.ini
 vendor/firmware/Conf_MultipleTest_HLT-BOE-07.ini
 vendor/firmware/Conf_MultipleTest_HLT-BOE-08.ini
@@ -2765,10 +2766,11 @@ vendor/lib/vendor.qti.gnss@4.0.so
 vendor/lib/vendor.qti.hardware.cacert@1.0.so
 vendor/lib/vendor.samsung.hardware.gnss@2.0.so
 
-# Gatekeeper
+# Gatekeeper - Service & lib64 Extracted from A20s
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -2826,7 +2828,7 @@ vendor/lib64/libqti-iopd-client.so
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 
-# Keymaster
+# Keymaster - Service & lib64 Extracted from A20s
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
 vendor/lib/libkeymasterdeviceutils.so
@@ -2834,6 +2836,11 @@ vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
 vendor/lib/libqcbor.so
 vendor/lib/libqtikeymaster4.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqcbor.so
+vendor/lib64/libqtikeymaster4.so
 
 # Latency
 vendor/lib/vendor.qti.latency@2.0.so
@@ -3097,6 +3104,7 @@ vendor/lib/libsemnativecarrierfeature.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
+vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.1.so
 
@@ -3260,10 +3268,6 @@ vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib/vendor.qti.hardware.sidekickmetrics@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.1.so
-vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
-vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.1.so
 vendor/lib64/hw/face.default.so
 vendor/lib64/hw/libRbsFlow.so
 vendor/lib64/libHMT.so
