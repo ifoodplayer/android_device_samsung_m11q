@@ -44,7 +44,8 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/samsung
+    hardware/samsung \
+    vendor/qcom/opensource/usb/etc
 
 # Ramdisk
 PRODUCT_PACKAGES += \
