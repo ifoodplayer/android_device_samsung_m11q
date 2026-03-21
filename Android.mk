@@ -39,15 +39,4 @@ $(MODEM_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(DSP_MOUNT_POINT) $(BT_FIRMWARE_MOUNT_POINT) $(MODEM_MOUNT_POINT)
 # END Vendor mounts
 
-# Grippower Wi-Fi symlink
-GRIPPOWER_INFO_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/grippower.info
-$(GRIPPOWER_INFO_SYMLINK): $(LOCAL_INSTALLED_MODULE)
-	@echo "Grippower info link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /vendor/etc/wifi/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(GRIPPOWER_INFO_SYMLINK)
-# END Grip Power Wi-Fi symlink
-
 endif

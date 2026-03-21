@@ -1,2 +1,9 @@
 soong_namespace {
 }
+
+install_symlink {
+    name: "firmware_grippower.info_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/prima/grippower.info",
+    symlink_target: "/vendor/etc/wifi/grippower.info",
+}
