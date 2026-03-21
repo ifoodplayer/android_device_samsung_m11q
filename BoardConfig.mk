@@ -35,7 +35,6 @@ BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
 TARGET_ENFORCES_QSSI := true
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Board
 TARGET_BOARD_INFO_FILE ?= $(DEVICE_PATH)/board-info.txt
@@ -198,6 +197,7 @@ TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
+$(call soong_config_set,samsungVars,target_specific_header_path,$(DEVICE_PATH)/include)
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
