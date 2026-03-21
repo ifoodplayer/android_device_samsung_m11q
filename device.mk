@@ -264,8 +264,9 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl:32 \
-    android.hardware.sensors@1.0-service-m11q
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    libpower.vendor
 
 # VNDK
 PRODUCT_COPY_FILES += \
@@ -275,7 +276,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libjson \
-    librmnetctl
+    librmnetctl \
+    libsqlite.vendor
 
 # RIL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
