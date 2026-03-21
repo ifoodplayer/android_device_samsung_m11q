@@ -374,7 +374,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wcnss_service  \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    WifiOverlayHS70
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/firmware/,$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima) \

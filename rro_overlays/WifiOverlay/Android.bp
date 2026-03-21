@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "WifiOverlayHS70",
+    theme: "WifiOverlayHS70",
+    sdk_version: "current",
+    product_specific: true
+}
