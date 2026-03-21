@@ -12,8 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 LOCAL_PATH := device/samsung/m11q
+
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -26,7 +28,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
     $(LOCAL_PATH)/overlay-lineage/packages/apps/Updater
 
-# Screen density
+# APPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
