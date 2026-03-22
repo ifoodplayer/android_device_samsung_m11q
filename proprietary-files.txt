@@ -3043,7 +3043,6 @@ vendor/lib/libhdcpsrm.so
 vendor/lib64/libhdcpsrm.so
 
 # WiFi
-vendor/bin/hw/macloader
 vendor/bin/cnss-daemon
 
 # Radio
