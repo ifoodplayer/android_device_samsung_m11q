@@ -3052,7 +3052,6 @@ vendor/lib64/libhdcpsrm.so
 # WiFi
 vendor/bin/hw/macloader
 vendor/bin/cnss-daemon
-vendor/etc/init/wifi_qcom.rc
 
 # Radio
 vendor/bin/hw/rild
