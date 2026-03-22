@@ -71,11 +71,4 @@
             <instance>sigmahal</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.samsung.frameworks.codecsolution</name>
-        <interface>
-            <name>ISehCodecSolution</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </compatibility-matrix>
