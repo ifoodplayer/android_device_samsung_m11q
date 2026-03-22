@@ -199,7 +199,6 @@ TARGET_SCREEN_DENSITY := 280
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
-TARGET_PROVIDES_LIBLIGHT := true
 $(call soong_config_set,samsungVars,target_specific_header_path,$(DEVICE_PATH)/include)
 
 # Peripheral manager
