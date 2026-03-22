@@ -127,7 +127,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl.m11q:32 \
     android.hardware.audio.service:32 \
     android.hardware.audio.effect@6.0-impl:32 \
-    android.hardware.soundtrigger@2.1-impl:32 \
     audio.r_submix.default:32 \
     audio.usb.default:32 \
     liba2dpoffload:32 \
@@ -140,6 +139,10 @@ PRODUCT_PACKAGES += \
     libsndmonitor:32 \
     libspkrprot:32 \
     libtinycompress:32
+
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.2-impl:32 \
+    sound_trigger.primary.msm8953:32
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
