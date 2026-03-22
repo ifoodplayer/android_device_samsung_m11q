@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
     fstab.boot.qcom \
     fstab.qcom \
     zram.fstab \
-    wifi.rc \
+    samsung_wifi.rc \
 	init.hq.common.rc \
 	init.hq.shipping.rc \
     init.qcom.rc \
