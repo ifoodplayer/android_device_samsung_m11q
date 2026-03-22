@@ -2856,16 +2856,11 @@ vendor/lib64/libmulawdec.so
 vendor/lib64/libstagefright_soft_qtiflacdec.so
 
 # OMX
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
 vendor/lib/libOmxAmrDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxG711Dec.so
@@ -2875,16 +2870,11 @@ vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libdsd2pcm.so
 vendor/lib/libmmosal.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
 vendor/lib64/libOmxAmrDec.so
 vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
@@ -3177,7 +3167,6 @@ vendor/lib/libqmi_legacy.so
 vendor/lib/libqmiservices.so
 vendor/lib/libqsap_sdk.so
 vendor/lib/libqtigef.so
-vendor/lib/libqtivibratoreffect.so
 vendor/lib/libreference-ril.so
 vendor/lib/librilutils.so
 vendor/lib/libsavsac.so
@@ -3321,7 +3310,6 @@ vendor/lib64/libqmi_legacy.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqsap_sdk.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libqtivibratoreffect.so
 vendor/lib64/librcc.so
 vendor/lib64/librilutils.so
 vendor/lib64/libsavsac.so
