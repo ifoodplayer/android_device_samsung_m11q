@@ -158,7 +158,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor:32 \
     android.hardware.bluetooth.a2dp@1.0.vendor:32 \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.bluetooth.audio-impl:32 \
     audio.bluetooth.default:32 \
     vendor.qti.hardware.btconfigstore@1.0.vendor:32 \
     vendor.qti.hardware.btconfigstore@2.0.vendor:32
