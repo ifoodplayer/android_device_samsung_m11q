@@ -2975,6 +2975,11 @@ vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
+vendor/lib64/hw/activity_recognition.msm8953.so
+vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
+vendor/lib64/sensor_calibrate.so
+vendor/lib64/sensors.ssc.so
 
 # Soter
 system_ext/framework/vendor.qti.hardware.soter-V1.0-java.jar

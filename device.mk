@@ -28,7 +28,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
     $(LOCAL_PATH)/overlay-lineage/packages/apps/Updater
 
-# APPT
+# AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
@@ -271,8 +271,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl:32 \
-    android.hardware.sensors@1.0-service-m11q \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
     libpower.vendor
 
 PRODUCT_COPY_FILES += \
