@@ -124,25 +124,25 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl.m11q:32 \
-    android.hardware.audio.service:32 \
-    android.hardware.audio.effect@6.0-impl:32 \
-    audio.r_submix.default:32 \
-    audio.usb.default:32 \
-    liba2dpoffload:32 \
-    libhdmiedid:32 \
-    libhfp:32 \
-    libqcompostprocbundle:32 \
-    libqcomvisualizer:32 \
-    libqcomvoiceprocessing:32 \
-    libeffectsconfig:32 \
-    libsndmonitor:32 \
-    libspkrprot:32 \
-    libtinycompress:32
+    android.hardware.audio@6.0-impl.m11q \
+    android.hardware.audio.service \
+    android.hardware.audio.effect@6.0-impl \
+    audio.r_submix.default \
+    audio.usb.default \
+    liba2dpoffload \
+    libhdmiedid \
+    libhfp \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libeffectsconfig \
+    libsndmonitor \
+    libspkrprot \
+    libtinycompress
 
 PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.2-impl:32 \
-    sound_trigger.primary.msm8953:32
+    android.hardware.soundtrigger@2.2-impl \
+    sound_trigger.primary.msm8953
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/configs/,$(TARGET_COPY_OUT_VENDOR)/etc) \
@@ -156,12 +156,12 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor:32 \
-    android.hardware.bluetooth.a2dp@1.0.vendor:32 \
-    android.hardware.bluetooth.audio-impl:32 \
-    audio.bluetooth.default:32 \
-    vendor.qti.hardware.btconfigstore@1.0.vendor:32 \
-    vendor.qti.hardware.btconfigstore@2.0.vendor:32
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth.a2dp@1.0.vendor \
+    android.hardware.bluetooth.audio-impl \
+    audio.bluetooth.default \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Biometrics
 PRODUCT_PACKAGES += \
@@ -173,9 +173,9 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor:32 \
-    android.hardware.gnss.visibility_control@1.0.vendor:32 \
-    android.hardware.gnss@2.1.vendor:32
+    android.hardware.gnss.measurement_corrections@1.1.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@2.1.vendor
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -207,8 +207,9 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -238,7 +239,7 @@ PRODUCT_PACKAGES += \
 
 # Capability Configstore
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor:32
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Configstore
 PRODUCT_PACKAGES += \
