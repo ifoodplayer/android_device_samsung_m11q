@@ -80,7 +80,7 @@ BOARD_MKBOOTIMG_ARGS += \
 # Kernel config
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CONFIG := m11q_open_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/m11q
+TARGET_KERNEL_SOURCE := kernel/samsung/sdm450
 
 # Kernel Toolchain
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
@@ -161,7 +161,7 @@ WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# FM
+# FM (Need test)
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
 
@@ -216,7 +216,6 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USES_MKE2FS := true
 
 # TODO: SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk

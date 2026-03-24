@@ -1,13 +1,13 @@
 Device tree for the Samsung Galaxy A11/M11
 =================================================
 
-Status: Booted (Build User variant is not booting)
+Status: Booted
 
   ## Device Specifications
  
   Basic | Spec Sheet
  -------:|:-------------------------
- SoC | Qualcomm SDM450 Snapdragon 450
+ SoC | Qualcomm MSM8953 Snapdragon 450
  CPU | Octa core (1.8 GHz)
  GPU | Adreno 506
  Memory | 2GB / 4 GB RAM
@@ -22,17 +22,6 @@ Status: Booted (Build User variant is not booting)
  Rear Camera (Depth) | 2 MP, f/2.4 (depth)
  Front Camera | 8 MP, f/2.0, 1/4.0", 1.12µm
  
-**ARM64 vendor was originally created by smiley9000**
-
-NOTE: I used the LineageOS Revived fork, if you are going to build it check if ro.zygote is 64_32 in out/target/product/m11q/vendor/default.prop if it is 32 put 64_32 do this before it builds the vendor image
-
-  In GSI these bugs are not happening
-|         Bugs - In ROM         |
-|------------------------------:|
-|BT Call Sound                  |
-|Face Unlock                    |
-|Wi-Fi disconnects on screen off|
-
  ## Device Picture
  
  ![Samsung Galaxy M11](https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-m11-sm-m115-1.jpg)
