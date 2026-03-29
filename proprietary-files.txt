@@ -403,7 +403,7 @@ vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib64/android.hardware.camera.provider@2.4-external.so
 vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
 
-# Camera-Dualcali_Golden
+# Camera-Dualcali
 vendor/lib/dualcali_golden.bin
 vendor/lib/dualcali_golden_12.bin
 vendor/lib/dualcali_golden_13.bin
@@ -416,6 +416,17 @@ vendor/lib/dualcali_golden_4.bin
 vendor/lib/dualcali_golden_5.bin
 vendor/lib/dualcali_golden_6.bin
 vendor/lib/dualcali_golden_9.bin
+
+# Camera-Arcsoft
+vendor/lib/libarcsoft_beauty_outfocus.so
+vendor/lib/libarcsoft_beauty_performance.so
+vendor/lib/libarcsoft_beautyshot.so
+vendor/lib/libarcsoft_bokeh_basic.so
+vendor/lib/libarcsoft_dehaze.so
+vendor/lib/libarcsoft_dualcam_refocus_image.so
+vendor/lib/libarcsoft_dualcam_refocus_video.so
+vendor/lib/libarcsoft_faceid.so
+vendor/lib/libgoldencali_arcsoft.so
 
 # Camera-actuators
 vendor/lib/libactuator_dw9714.so
@@ -2643,10 +2654,17 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so
 vendor/lib/vendor.qti.esepowermanager@1.1.so
 
 # FM
+vendor/bin/fm_qsoc_patches
+vendor/etc/init/init.qti.fm.rc
+app/FmTest/lib/arm64/fm_helium.so:system_ext/lib64/fm_helium.so
+app/FmTest/lib/arm64/libfm-hci.so:system_ext/lib64/libfm-hci.so
+vendor/lib/vendor.qti.hardware.fm@1.0.so:system_ext/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so:system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Fingerprint
+-system/framework/vendor.silead.hardware.fingerprintext-V1.0-java.jar
 vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
 vendor/etc/init/vendor.silead.hardware.fingerprintext@1.0-service.rc
 vendor/lib/hw/fingerprint.silead.default.so
@@ -2715,10 +2733,6 @@ vendor/firmware/mp_txd12.ini
 vendor/firmware/mp_txd15.ini
 vendor/firmware/mp_txd_cd.ini
 vendor/firmware/tas256x_reg.bin
-vendor/firmware/wlan/prima/WCNSS_cfg.dat
-vendor/firmware/wlan/prima/WCNSS_qcom_cfg.ini
-vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-vendor/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
 
 # GPS
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
@@ -2986,7 +3000,6 @@ vendor/bin/subsystem_ramdump
 vendor/lib/libsubsystem_control.so
 
 # Sensor-configs
-vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
 # Sensors
@@ -2995,12 +3008,12 @@ vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/sensor_calibrate.so
+vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.msm8953.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.ssc.so
-vendor/lib/sensors.ssc.so
 
 # Soter
 system_ext/framework/vendor.qti.hardware.soter-V1.0-java.jar
@@ -3034,13 +3047,6 @@ vendor/lib/libUBWC.so
 vendor/lib/libstreamparser.so
 vendor/lib64/libUBWC.so
 vendor/lib64/libstreamparser.so
-
-# Vibrator
-vendor/bin/hw/vendor.samsung.hardware.vibrator@2.2-service
-vendor/etc/init/vendor.samsung.hardware.vibrator@2.2-service.rc
-vendor/lib/vendor.samsung.hardware.vibrator@2.0.so
-vendor/lib/vendor.samsung.hardware.vibrator@2.1.so
-vendor/lib/vendor.samsung.hardware.vibrator@2.2.so
 
 # Voice
 vendor/lib/vendor.qti.voiceprint@1.0.so
@@ -3078,6 +3084,9 @@ vendor/etc/data/netmgr_config.xml
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/vendor.qti.tftp.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
+vendor/etc/init/init.vendor.onebinary.rc
+vendor/etc/init/init.vendor.rilchip.rc
+vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/seccomp_policy/atfwd@2.0.policy
 vendor/etc/locale/plmn_delta_eng.bin
 vendor/etc/locale/plmn_delta_zh-rCN.bin
@@ -3112,15 +3121,15 @@ vendor/lib/libsemnativecarrierfeature.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
+vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.0.so
 vendor/lib/vendor.samsung.hardware.radio@2.1.so
 
-# Misc
+# Misc - bin
 vendor/bin/KmInstallKeybox
 vendor/bin/PktRspTest
 vendor/bin/StoreKeybox
 vendor/bin/btcoex_cont_config
-vendor/bin/fm_qsoc_patches
 vendor/bin/hal_proxy_daemon
 vendor/bin/hqread
 vendor/bin/iod
@@ -3131,15 +3140,8 @@ vendor/bin/sigma_dut
 vendor/bin/spectraltool
 vendor/bin/storkd
 vendor/bin/tbaseLoader
-vendor/bin/xtra-daemon
-vendor/etc/audio_effects.conf
-vendor/etc/audio_effects_common.conf
-vendor/etc/audio_platform_info_intcodec.xml
-vendor/etc/audio_platform_info_sku3_tasha.xml
-vendor/etc/audio_platform_info_sku4.xml
-vendor/etc/audio_platform_info_smartpa.xml
-vendor/etc/audio_platform_info_tasha.xml
-vendor/etc/audio_platform_info_tashalite.xml
+
+# Misc - etc
 vendor/etc/btcon.json
 vendor/etc/cne/mwqem.conf
 vendor/etc/cne/profileMwqem.xml
@@ -3170,8 +3172,12 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
-vendor/etc/data/dsi_config.xml
-vendor/etc/data/netmgr_config.xml
+vendor/etc/gpfspath_oem_config.xml
+vendor/etc/init/btcoex_cont_config.rc
+vendor/etc/init/init.vendor.sysfw.rc
+vendor/etc/pdpcnt-conf.xml
+
+# Misc - lib
 vendor/lib/libmpbase.so
 vendor/lib/libnetfilter_conntrack.so
 vendor/lib/libnetmgr_nr_fusion.so
@@ -3201,7 +3207,6 @@ vendor/lib/libqmi_legacy.so
 vendor/lib/libqmiservices.so
 vendor/lib/libqsap_sdk.so
 vendor/lib/libqtigef.so
-vendor/lib/libqtivibratoreffect.so
 vendor/lib/libreference-ril.so
 vendor/lib/librilutils.so
 vendor/lib/libsavsac.so
@@ -3276,10 +3281,51 @@ vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib/vendor.qti.hardware.sidekickmetrics@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.1.so
-vendor/lib/vendor.samsung.hardware.radio.bridge@2.0.so
-vendor/lib/vendor.samsung.hardware.radio.channel@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.0.so
-vendor/lib/vendor.samsung.hardware.radio@2.1.so
+vendor/lib/hw/face.default.so
+vendor/lib/hw/libRbsFlow.so
+vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
+vendor/lib/libFaceAuth.so
+vendor/lib/libHMT.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libSecC2ComponentStore.so
+vendor/lib/libVkLayer_q3dtools.so
+vendor/lib/lib_SoundAlive_3DPosition_ver202.so
+vendor/lib/libadm.so
+vendor/lib/libalsautils.so
+vendor/lib/libaudioconfigstore.so
+vendor/lib/libautohal.so
+vendor/lib/libbatterylistener.so
+vendor/lib/libcamera2ndk_vendor.so
+vendor/lib/libcirrusspkrprot.so
+vendor/lib/libcneoplookup.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libcppf.so
+vendor/lib/libdeccfg.so
+vendor/lib/libdiag.so
+vendor/lib/libdiagjni.so
+vendor/lib/libdk_vnd_service_core.so
+vendor/lib/libdsms_vendor.so
+vendor/lib/libdsutils.so
+vendor/lib/libets_teeclient_v2.so
+vendor/lib/libexthwplugin.so
+vendor/lib/libfastcrc.so
+vendor/lib/libhwc2on1adapter.so
+vendor/lib/libhwc2onfbadapter.so
+vendor/lib/libhwminijail.so
+vendor/lib/libhyper.so
+vendor/lib/libhypervintf.so
+vendor/lib/libhypv_intercept.so
+vendor/lib/libidl.so
+vendor/lib/libipanat.so
+vendor/lib/libjnihelper.so
+vendor/lib/liblqe.so
+vendor/lib/libmdf.so
+vendor/lib/libmediaconverter.so
+vendor/lib/libminkdescriptor.so
+vendor/lib/libminksocket.so
+vendor/lib/libmm-color-convertor.so
+
+# Misc - lib64 (a20s)
 vendor/lib64/hw/face.default.so
 vendor/lib64/hw/libRbsFlow.so
 vendor/lib64/libHMT.so
@@ -3350,7 +3396,6 @@ vendor/lib64/libqmi_legacy.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libqsap_sdk.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libqtivibratoreffect.so
 vendor/lib64/librcc.so
 vendor/lib64/librilutils.so
 vendor/lib64/libsavsac.so
@@ -3414,85 +3459,3 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
-vendor/etc/gpfspath_oem_config.xml
-vendor/etc/init/btcoex_cont_config.rc
-vendor/etc/init/init.qti.fm.rc
-vendor/etc/init/init.vendor.onebinary.rc
-vendor/etc/init/init.vendor.rilchip.rc
-vendor/etc/init/init.vendor.rilcommon.rc
-vendor/etc/init/init.vendor.sysfw.rc
-vendor/etc/media_codecs_8953.xml
-vendor/etc/media_codecs_8953_v1.xml
-vendor/etc/media_codecs_ac4.xml
-vendor/etc/media_codecs_ddp.xml
-vendor/etc/media_codecs_performance_8953.xml
-vendor/etc/media_codecs_performance_8953_v1.xml
-vendor/etc/media_codecs_vendor.xml
-vendor/etc/media_codecs_vendor_audio.xml
-vendor/etc/media_profiles.xml
-vendor/etc/media_profiles_8953_v1.xml
-vendor/etc/media_profiles_vendor.xml
-vendor/etc/mixer_paths_mtp.xml
-vendor/etc/mixer_paths_mtp_aw.xml
-vendor/etc/mixer_paths_mtp_awk9.xml
-vendor/etc/mixer_paths_mtp_fs1894.xml
-vendor/etc/mixer_paths_mtp_spc.xml
-vendor/etc/mixer_paths_mtp_ti.xml
-vendor/etc/mixer_paths_sku3_tasha.xml
-vendor/etc/mixer_paths_sku4.xml
-vendor/etc/mixer_paths_tasha.xml
-vendor/etc/mixer_paths_tashalite.xml
-vendor/etc/pdpcnt-conf.xml
-vendor/etc/playback_record_audio_policy_configuration.xml
-vendor/lib/hw/face.default.so
-vendor/lib/hw/libRbsFlow.so
-vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib/libFaceAuth.so
-vendor/lib/libHMT.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libSecC2ComponentStore.so
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib/lib_SoundAlive_3DPosition_ver202.so
-vendor/lib/libadm.so
-vendor/lib/libalsautils.so
-vendor/lib/libarcsoft_beauty_outfocus.so
-vendor/lib/libarcsoft_beauty_performance.so
-vendor/lib/libarcsoft_beautyshot.so
-vendor/lib/libarcsoft_bokeh_basic.so
-vendor/lib/libarcsoft_dehaze.so
-vendor/lib/libarcsoft_dualcam_refocus_image.so
-vendor/lib/libarcsoft_dualcam_refocus_video.so
-vendor/lib/libarcsoft_faceid.so
-vendor/lib/libaudioconfigstore.so
-vendor/lib/libautohal.so
-vendor/lib/libbatterylistener.so
-vendor/lib/libcamera2ndk_vendor.so
-vendor/lib/libcirrusspkrprot.so
-vendor/lib/libcneoplookup.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libcppf.so
-vendor/lib/libdeccfg.so
-vendor/lib/libdiag.so
-vendor/lib/libdiagjni.so
-vendor/lib/libdk_vnd_service_core.so
-vendor/lib/libdsms_vendor.so
-vendor/lib/libdsutils.so
-vendor/lib/libets_teeclient_v2.so
-vendor/lib/libexthwplugin.so
-vendor/lib/libfastcrc.so
-vendor/lib/libgoldencali_arcsoft.so
-vendor/lib/libhwc2on1adapter.so
-vendor/lib/libhwc2onfbadapter.so
-vendor/lib/libhwminijail.so
-vendor/lib/libhyper.so
-vendor/lib/libhypervintf.so
-vendor/lib/libhypv_intercept.so
-vendor/lib/libidl.so
-vendor/lib/libipanat.so
-vendor/lib/libjnihelper.so
-vendor/lib/liblqe.so
-vendor/lib/libmdf.so
-vendor/lib/libmediaconverter.so
-vendor/lib/libminkdescriptor.so
-vendor/lib/libminksocket.so
-vendor/lib/libmm-color-convertor.so
