@@ -171,11 +171,6 @@ BOARD_HAVE_QCOM_FM := true
 #BOARD_PROVIDES_LIBRIL := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib/libsec-ril.so|libcutils_shim.so \
-    /vendor/lib/libsec-ril-dsds.so|libcutils_shim.so
-
 # HIDL
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
