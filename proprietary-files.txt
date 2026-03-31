@@ -1,7 +1,10 @@
-# All files containing lib64 are from the a20s
+# Only vendor/lib64/sensors.ssc.so are from gtowifixx
+# gtowifixx-user 11 RP1A.200720.012 T290XXU3CVG3 release-keys
+
+# Files containing lib64 are from a20sxx
 # a20sxx-user 11 RP1A.200720.012 A207FXXS3CVD1 release-keys
 
-# Files below are from m11q
+# Files below are from m11qnsxx
 # m11qnsxx-user 11 RP1A.200720.012 M115FXXU3BVD1 release-keys
 
 # ADSP
@@ -2992,7 +2995,7 @@ vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 vendor/lib/libsubsystem_control.so
 
-# Sensor-configs
+# Sensor-config
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
 # Sensors
